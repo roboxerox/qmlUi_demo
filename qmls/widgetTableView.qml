@@ -9,39 +9,39 @@ Item {
     ListModel {
           id: coachModel
           ListElement {
-              coach_id: "80001A"
-              coach_postion: "1"
-              coach_type: "DTC"
+              emply_id: "1200"
+              emply_dep: "R&D HW"
+              emply_role: "Sr. Developer"
               check: true
           }
           ListElement {
-              coach_id: "80001B"
-              coach_postion: "2"
-              coach_type: "NDTC"
+              emply_id: "1210"
+              emply_dep: "R&D HW"
+              emply_role: "Manager"
               check: true
           }
           ListElement {
-              coach_id: "80002A"
-              coach_postion: "3"
-              coach_type: "NDTC"
+              emply_id: "1211"
+              emply_dep: "R&D SW"
+              emply_role: "Sr. Developer"
               check: false
           }
           ListElement {
-              coach_id: "70001A"
-              coach_postion: "4"
-              coach_type: "NDTC"
+              emply_id: "1212"
+              emply_dep: "SALES"
+              emply_role: "Sales Executive"
               check: true
           }
           ListElement {
-              coach_id: "70001B"
-              coach_postion: "5"
-              coach_type: "NDTC"
+              emply_id: "1213"
+              emply_dep: "PRODUCTION"
+              emply_role: "Production manager"
               check: false
           }
           ListElement {
-              coach_id: "70001C"
-              coach_postion: "6"
-              coach_type: "DTC"
+              emply_id: "1220"
+              emply_dep: "MANAGEMENT"
+              emply_role: "HR"
               check: true
           }
     }
@@ -51,18 +51,18 @@ Item {
         id: table_view
         anchors.fill: parent
           TableViewColumn {
-              role: "coach_postion"
-              title: "COACH POSITION"
+              role: "emply_id"
+              title: "EMPLOYEE ID"
               width: 200
           }
           TableViewColumn {
-              role: "coach_id"
-              title: "COACH ID"
+              role: "emply_dep"
+              title: "EMPLOYEE DEPARTMENT"
               width: 200
           }
           TableViewColumn {
-              role: "coach_type"
-              title: "COACH TYPE"
+              role: "emply_role"
+              title: "EMPLOYEE ROLE"
               width: 200
           }
           TableViewColumn {
