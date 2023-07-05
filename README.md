@@ -24,6 +24,7 @@ This demo is using qt-qml which has include examples of :
 
 		sudo apt update
 		sudo apt install build-essential qt5-default qtdeclarative5-dev
+  		sudo apt install qml-module-qtquick-dialog libqt5charts5-dev 
 		
 		
 ## Build
