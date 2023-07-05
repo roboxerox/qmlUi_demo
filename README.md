@@ -17,6 +17,7 @@ This demo is using qt-qml which has include examples of :
 14. Image brightness & Contrast
 15. Label with RectangularGlow
 16. Chart View (pie/Bar/line/spline)
+17. Tab view
 
 
 ## Dependencies install
