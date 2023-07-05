@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qmls/main.qml</file>
+        <file>images/BG001.png</file>
+        <file>images/Screenshot.png</file>
+        <file>qmls/StatusBar.qml</file>
+        <file>qmls/StackViewPage.qml</file>
+        <file>qmls/GridLay1.qml</file>
+        <file>qmls/GridLay2.qml</file>
+        <file>qmls/Settings.qml</file>
+        <file>qmls/widget1.qml</file>
+        <file>qmls/AboutDialog.qml</file>
+        <file>images/icon1.png</file>
+        <file>images/ec.png</file>
+        <file>qmls/ElectronicsDetails.qml</file>
+        <file>qmls/ServerArch.qml</file>
+        <file>images/servers.png</file>
+        <file>images/MVB_TCN_001.png</file>
+        <file>images/Next_txt.png</file>
+        <file>images/Back_txt.png</file>
+        <file>ip_links.xml</file>
+        <file>qmls/TabWidget1.qml</file>
+        <file>qmls/widgetTableView.qml</file>
+        <file>qmls/widgetVideoPlayer.qml</file>
+        <file>images/sample_1280x720.mkv</file>
+        <file>qmls/recDesign.qml</file>
+        <file>qmls/gammaAdjustment.qml</file>
+        <file>qmls/hueSaturationPage.qml</file>
+        <file>images/bug.png</file>
+        <file>qmls/colorizePage.qml</file>
+        <file>qmls/brightnessContrastPage.qml</file>
+        <file>qmls/demoCharts1.qml</file>
+        <file>qmls/demoCharts2.qml</file>
+    </qresource>
+</RCC>
