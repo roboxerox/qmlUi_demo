@@ -15,6 +15,7 @@ Rectangle {
         anchors{
             top:parent.top
             left: parent.left
+            leftMargin: 10
         }
         title: "pie "
         width: 450
@@ -23,7 +24,7 @@ Rectangle {
         antialiasing: true
 
         PieSeries {
-            name: "Working Hours"
+            name: "Office Hours"
             id: pieSeries
             PieSlice { label: "works"; value: 76 }
             PieSlice { label: "Lunch break"; value: 6.25 }

@@ -3,6 +3,8 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
 
 Item {
+    id: grid_layout2
+
     ListModel {
         id : list_model
         ListElement {
@@ -26,8 +28,8 @@ Item {
             page: "qrc:/qmls/demoCharts2.qml"
         }
         ListElement {
-            name:"Six"
-            page: ""
+            name:"Misc"
+            page: "qrc:/qmls/miscellaneousPage.qml"
         }
 
     }

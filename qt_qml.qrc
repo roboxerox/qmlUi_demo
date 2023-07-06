@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qmls/widgetVideoPlayer.qml</file>
+        <file>qmls/widgetTableView.qml</file>
+        <file>qmls/widgetNetwork.qml</file>
+        <file>qmls/TabWidget1.qml</file>
+        <file>qmls/StatusBar.qml</file>
+        <file>qmls/StackViewPage.qml</file>
+        <file>qmls/Settings.qml</file>
+        <file>qmls/fileEdit.qml</file>
+        <file>qmls/recDesign.qml</file>
+        <file>qmls/main.qml</file>
+        <file>qmls/hueSaturationPage.qml</file>
+        <file>qmls/GridLay2.qml</file>
+        <file>qmls/GridLay1.qml</file>
+        <file>qmls/gammaAdjustment.qml</file>
+        <file>qmls/demoCharts2.qml</file>
+        <file>qmls/demoCharts1.qml</file>
+        <file>qmls/colorizePage.qml</file>
+        <file>qmls/brightnessContrastPage.qml</file>
+        <file>qmls/miscellaneousPage.qml</file>
+        <file>qmls/imagesDetails.qml</file>
+    </qresource>
+</RCC>

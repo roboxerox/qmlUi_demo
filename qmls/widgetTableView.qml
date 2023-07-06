@@ -2,94 +2,141 @@ import QtQuick 2.0
 import QtQuick.Controls 2.2
 import QtQuick.Controls 1.4
 
-Item {
+Rectangle {
     id: table_view_page
     anchors.fill: parent
+    color: "transparent"
 
     ListModel {
-          id: coachModel
-          ListElement {
-              emply_id: "1200"
-              emply_dep: "R&D HW"
-              emply_role: "Sr. Developer"
-              check: true
-          }
-          ListElement {
-              emply_id: "1210"
-              emply_dep: "R&D HW"
-              emply_role: "Manager"
-              check: true
-          }
-          ListElement {
-              emply_id: "1211"
-              emply_dep: "R&D SW"
-              emply_role: "Sr. Developer"
-              check: false
-          }
-          ListElement {
-              emply_id: "1212"
-              emply_dep: "SALES"
-              emply_role: "Sales Executive"
-              check: true
-          }
-          ListElement {
-              emply_id: "1213"
-              emply_dep: "PRODUCTION"
-              emply_role: "Production manager"
-              check: false
-          }
-          ListElement {
-              emply_id: "1220"
-              emply_dep: "MANAGEMENT"
-              emply_role: "HR"
-              check: true
-          }
+        id: coachModel
+        ListElement {
+            emply_id: "1200"
+            emply_dep: "R&D h/w"
+            emply_role: "Sr. Developer"
+            emply_name: "Jack M"
+            check: true
+        }
+        ListElement {
+            emply_id: "1210"
+            emply_dep: "R&D h/w"
+            emply_role: "Manager"
+            emply_name: "Alina jose"
+            check: true
+        }
+        ListElement {
+            emply_id: "1211"
+            emply_dep: "R&D s/w"
+            emply_role: "Sr. Developer"
+            emply_name: "Mike"
+            check: false
+        }
+        ListElement {
+            emply_id: "1212"
+            emply_dep: "Sales"
+            emply_role: "Sales Executive"
+            emply_name: "Peter will"
+            check: true
+        }
+        ListElement {
+            emply_id: "1213"
+            emply_dep: "Production"
+            emply_role: "Production manager"
+            emply_name: "Rammsy"
+            check: false
+        }
+        ListElement {
+            emply_id: "1220"
+            emply_dep: "Managment"
+            emply_role: "HR Executive"
+            emply_name: "Jacksson smith"
+            check: true
+        }
+        ListElement {
+            emply_id: "1110"
+            emply_dep: "IT"
+            emply_role: "Sr. IT Support"
+            emply_name: "Billy more"
+            check: false
+        }
     }
 
 
     TableView {
         id: table_view
-        anchors.fill: parent
-          TableViewColumn {
-              role: "emply_id"
-              title: "EMPLOYEE ID"
-              width: 200
-          }
-          TableViewColumn {
-              role: "emply_dep"
-              title: "EMPLOYEE DEPARTMENT"
-              width: 200
-          }
-          TableViewColumn {
-              role: "emply_role"
-              title: "EMPLOYEE ROLE"
-              width: 200
-          }
-          TableViewColumn {
-              role: "check"
-              title: "STATUS"
-              delegate: CheckBox {
-                  checked: styleData.value
-              }
-          }
-          model: coachModel
+        height: parent.height - 100
+        width: parent.width
+        TableViewColumn {
+            role: "emply_id"
+            title: "EMPLOYEE ID"
+            //              width: 200
+        }
+        TableViewColumn {
+            role: "emply_dep"
+            title: "EMPLOYEE DEPARTMENT"
+            //              width: 200
+        }
+        TableViewColumn {
+            role: "emply_role"
+            title: "EMPLOYEE ROLE"
+            //              width: 200
+        }
+        TableViewColumn {
+            role: "emply_name"
+            title: "EMPLOYEE NAME"
+            //              width: 200
+        }
+        TableViewColumn {
+            role: "check"
+            title: "STATUS"
+            delegate: CheckBox {
+                checked: styleData.value
+            }
+        }
+        model: coachModel
 
-          itemDelegate: Item {
-              id: item_
-              Text {
-                  anchors.verticalCenter: parent.verticalCenter
-                  //                  color: styleData.color
-                  elide: Text.ElideRight
-                  text: styleData.value
-                  font.pixelSize: 15
-              }
-          }
+        itemDelegate: Item {
+            id: item_
+            Text {
+                anchors.verticalCenter: parent.verticalCenter
+                //                  color: styleData.color
+                elide: Text.ElideRight
+                text: styleData.value
+                font.pixelSize: 15
+            }
+        }
 
-          onClicked: {
-              console.log(coachModel.get(row).coach_id + ' ' + coachModel.get(row).coach_type)
-//              item_.
-          }
-      }
+        onClicked: {
+            //              console.log(coachModel.get(row).emply_id + ' ' + coachModel.get(row).emply_name)
+            str_id = coachModel.get(row).emply_id
+            str_name = coachModel.get(row).emply_name
+        }
+    }// TableView
+
+
+    property string str_id: ""
+    property string str_name: ""
+
+    Text {
+        id: selected_id
+        anchors{
+            top: table_view.bottom
+            left: parent.left
+        }
+        height: 45
+        color: "lightgrey"
+        text: str_id
+    }
+
+    Text {
+        id: selected_name
+        anchors{
+            top: table_view.bottom
+            left: selected_id.right
+        }
+        height: 45
+        color: "lightgrey"
+        text: " => "+str_name
+    }
 
 
 

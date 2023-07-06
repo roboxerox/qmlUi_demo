@@ -15,6 +15,7 @@ Rectangle {
         anchors{
             top:parent.top
             left: parent.left
+            leftMargin: 10
         }
         title: "Bar view"
         width: 450
@@ -26,8 +27,8 @@ Rectangle {
             name: "Inputs"
             id: mySeries
             axisX: BarCategoryAxis { categories: ["2019", "2020", "2021", "2022", "2023" ] }
-            BarSet { label: "R&D(S/W)"; values: [2, 2, 3, 4, 5] }
-            BarSet { label: "R&D(H/W)"; values: [5, 3, 2, 4, 6] }
+            BarSet { label: "R&D(s/w)"; values: [2, 2, 3, 4, 5] }
+            BarSet { label: "R&D(h/w)"; values: [5, 3, 2, 4, 6] }
             BarSet { label: "Sales"; values: [3, 5, 8, 9, 10] }
             BarSet { label: "Production"; values: [4, 2, 6, 8, 7] }
         }

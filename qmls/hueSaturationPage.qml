@@ -11,18 +11,19 @@ Rectangle {
 
 
     Item {
-        id: org_image
+        id: org_image_h
         anchors{
             top:parent.top
             left: parent.left
             margins: 25
+            leftMargin: 65
         }
 
         width: 400
         height: 400
 
         Image {
-            id: bug_org
+            id: bug_org_h
             source: "qrc:/images/bug.png"
             sourceSize: Qt.size(parent.width, parent.height)
             smooth: true
@@ -32,7 +33,7 @@ Rectangle {
         Text {
             id: real_default_values
             anchors{
-                top:bug_org.bottom
+                top:bug_org_h.bottom
             }
             color: "white"
             text: qsTr("hue: 0, Satutartion: 0, Lightness: 0")
@@ -45,9 +46,9 @@ Rectangle {
 
     Item {
 
-        id:ench1_image
+        id:h_ench1_image
         anchors{
-            left: org_image.right
+            left: org_image_h.right
             top:parent.top
             margins: 25
         }
@@ -55,7 +56,7 @@ Rectangle {
         height: 400
 
         Image {
-            id: bug1
+            id: bug1h_enhance
             source: "qrc:/images/bug.png"
             sourceSize: Qt.size(parent.width, parent.height)
             smooth: true
@@ -63,11 +64,8 @@ Rectangle {
         }
 
         HueSaturation {
-            anchors.fill: bug1
-            source: bug1
-//            hue: -0.3
-//            saturation: 0.5
-//            lightness: -0.1
+            anchors.fill: bug1h_enhance
+            source: bug1h_enhance
             hue: iHue
             saturation: iSaturation
             lightness: ilightness
@@ -76,7 +74,7 @@ Rectangle {
         Text {
             id: real_values
             anchors{
-                top:bug1.bottom
+                top:bug1h_enhance.bottom
             }
             color: "white"
             text: qsTr("hue: " + iHue +", Satutartion: " + iSaturation + ", Lightness: " +ilightness)
@@ -89,7 +87,9 @@ Rectangle {
         spacing:10
         anchors {
             left: parent.left
-            top: org_image.bottom
+            top: org_image_h.bottom
+            leftMargin: 65
+            topMargin: 10
         }
 
 

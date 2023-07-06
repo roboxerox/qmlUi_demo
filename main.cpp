@@ -3,6 +3,7 @@
 #include <QApplication>
 //#include <fileio.h>
 #include <helper.h>
+#include <reader.h>
 
 
 int main(int argc, char *argv[])
@@ -30,7 +31,10 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     QQmlApplicationEngine engine;
     Helper helper;
+    Reader reader;
     engine.rootContext()->setContextProperty(QStringLiteral("helper"), &helper);
+    engine.rootContext()->setContextProperty(QStringLiteral("reader"), &reader);
+
     const QUrl url(QStringLiteral("qrc:/qmls/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {

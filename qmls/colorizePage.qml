@@ -10,18 +10,19 @@ Rectangle {
 
 
     Item {
-        id: org_image
+        id: org_image_c
         anchors{
             top:parent.top
             left: parent.left
             margins: 25
+            leftMargin: 65
         }
 
         width: 400
         height: 400
 
         Image {
-            id: bug_org
+            id: bug_org_c
             source: "qrc:/images/bug.png"
             sourceSize: Qt.size(parent.width, parent.height)
             smooth: true
@@ -31,7 +32,7 @@ Rectangle {
         Text {
             id: real_default_values
             anchors{
-                top:bug_org.bottom
+                top:bug_org_c.bottom
             }
             color: "white"
             text: qsTr("hue: 0, Satutartion: 0, Lightness: 0")
@@ -44,9 +45,9 @@ Rectangle {
 
     Item {
 
-        id:ench1_image
+        id:c_ench1_image
         anchors{
-            left: org_image.right
+            left: org_image_c.right
             top:parent.top
             margins: 25
         }
@@ -54,7 +55,7 @@ Rectangle {
         height: 400
 
         Image {
-            id: bug1
+            id: bug1c_enhance
             source: "qrc:/images/bug.png"
             sourceSize: Qt.size(parent.width, parent.height)
             smooth: true
@@ -62,8 +63,8 @@ Rectangle {
         }
 
         Colorize {
-            anchors.fill: bug1
-            source: bug1
+            anchors.fill: bug1c_enhance
+            source: bug1c_enhance
             hue: iHue
             saturation: iSaturation
             lightness: ilightness
@@ -72,7 +73,7 @@ Rectangle {
         Text {
             id: real_values
             anchors{
-                top:bug1.bottom
+                top:bug1c_enhance.bottom
             }
             color: "white"
             text: qsTr("hue: " + iHue +", Satutartion: " + iSaturation + ", Lightness: " +ilightness)
@@ -85,7 +86,9 @@ Rectangle {
         spacing:10
         anchors {
             left: parent.left
-            top: org_image.bottom
+            top: org_image_c.bottom
+            leftMargin: 65
+            topMargin: 10
         }
 
 
@@ -153,7 +156,8 @@ Rectangle {
         spacing:10
         anchors {
             left: parent.left
-            top:  settings_row.bottom
+            top:  csettings_row.bottom
+            leftMargin: 65
         }
 
         Button{

@@ -1,6 +1,8 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
+import QtQuick.Dialogs 1.1
+
 
 
 
@@ -18,10 +20,11 @@ Rectangle {
         id: button_row
         height: status_bar.height
         width: status_bar.width / 4
-        spacing:2
+        spacing:5
         anchors {
             left: status_bar.left
             top: status_bar.top
+            leftMargin: 5
         }
 
         Button {
@@ -37,7 +40,6 @@ Rectangle {
             width: parent.width/3
             text: "Settings"
             onClicked: {
-                 console.log(qsTr(' SETTINGS' ))
                 main_loader.source = "qrc:/qmls/Settings.qml"
             }
         }
@@ -49,17 +51,41 @@ Rectangle {
 
             onClicked:
             {
-                var popupComponent = Qt.createComponent("qrc:/qmls/AboutDialog.qml")
-                var popup2 = popupComponent.createObject(parent);
-                popup2.open()
+//                var popupComponent = Qt.createComponent("qrc:/qmls/AboutDialog.qml")
+//                var popup2 = popupComponent.createObject(parent);
+//                popup2.open()
+                about_box.open()
             }
         }
+
+        Button {
+            id:btn_close
+            width: parent.width/3
+            text: "Close"
+
+            onClicked: Qt.quit()
+        }
     }
-//    property alias status_datetime: status_datetime
+
+    MessageDialog {
+        id: about_box
+        title: "About Us"
+        text: "
+               Qt/QML UI
+               Version : 0.6
+               Description: This is a demo example of qt/qml UI "
+        icon: StandardIcon.Information
+        standardButtons: StandardButton.Ok
+        onAccepted: {
+            close()
+        }
+    }
+
+
 
     function set()
     {
-        status_datetime.text = Qt.formatDateTime(new Date(), "dd/MM/yyyy hh:mm:ss")
+        status_datetime.text = Qt.formatDateTime(new Date(), "MMMM dd yyyy  hh:mm:ss")
     }
 
     Text {

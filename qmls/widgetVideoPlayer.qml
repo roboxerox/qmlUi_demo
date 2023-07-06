@@ -43,7 +43,7 @@ Rectangle {
     MediaPlayer {
         id: player
 //        source: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
-        source: "qrc:/images/sample_1280x720.mkv"
+        source: "qrc:/images/light.mp4"
 //        autoPlay: true
     }
 
@@ -78,6 +78,7 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
+                player.stop()
                 main_loader.source = "qrc:/qmls/StackViewPage.qml"
             }
         }

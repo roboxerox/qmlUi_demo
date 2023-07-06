@@ -1,4 +1,4 @@
-<interfaces>
+<eth>
 	<interface>
 		<ifname>local</ifname>
 		<ip_addr>127.0.0.1</ip_addr>
@@ -15,4 +15,8 @@
 		<ifname>enp3s0</ifname>
 		<ip_addr>192.168.1.5</ip_addr>
 	</interface>
-</interfaces>
+	<interface>
+		<ifname>enp4s0</ifname>
+		<ip_addr>10.120.11.28</ip_addr>
+	</interface>
+</eth>

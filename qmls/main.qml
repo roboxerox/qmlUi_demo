@@ -6,7 +6,8 @@ Window {
     visible: true
     width: 1024
     height: 680
-    title: qsTr("Stack UI")
+    title: qsTr("Qt/QML UI")
+    flags: Qt.FramelessWindowHint
 
     Image {
         id: backgroung_img

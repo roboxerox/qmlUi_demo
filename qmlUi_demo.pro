@@ -1,13 +1,13 @@
 TEMPLATE = app
 
-QT += qml quick core charts
+QT += qml quick core charts network
 CONFIG += c++11
 
 SOURCES += main.cpp \
     fileio.cpp \
-    helper.cpp
+    helper.cpp \
+    reader.cpp
 
-RESOURCES += qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -33,5 +33,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     fileio.h \
-    helper.h
+    helper.h \
+    reader.h
 
+RESOURCES += \
+    icons.qrc \
+    qt_qml.qrc
+
+
+LIBS += -lssl

@@ -128,6 +128,177 @@ Rectangle
     }
 
 
+    Item {
+        id:rect4_design
+        anchors{
+            top: rect1_design.bottom
+            left: parent.left
+            margins: 15
+        }
+
+        width: 200
+        height: 200
+
+        Rectangle {
+            id: background4
+            anchors.fill: parent
+            color: "black"
+        }
+
+        RectangularGlow {
+            id: effect4
+            anchors.fill: rect4
+            glowRadius: 30
+            spread: 0.3
+            color: "#FF0000"
+            cornerRadius: rect4.radius + glowRadius
+        }
+
+        Rectangle {
+            id: rect4
+            color: "black"
+            anchors.centerIn: parent
+            width: Math.round(parent.width / 2)
+            height: Math.round(parent.height / 2)
+            radius: 100
+
+            MouseArea{
+                anchors.fill: parent
+                onClicked: console.log("rect4")
+            }
+        }
+    }
+
+
+    Item {
+        id:rect5_design
+        anchors{
+            top: rect1_design.bottom
+            left: rect4_design.right
+            margins: 15
+        }
+
+        width: 200
+        height: 200
+
+        Rectangle {
+            id: background5
+            anchors.fill: parent
+            color: "black"
+        }
+
+        RectangularGlow {
+            id: effect5
+            anchors.fill: rect5
+            glowRadius: 30
+            spread: 0.3
+            color: "#FFF010"
+            cornerRadius: rect5.radius + glowRadius
+        }
+
+        Rectangle {
+            id: rect5
+            color: "black"
+            anchors.centerIn: parent
+            width: Math.round(parent.width / 2)
+            height: Math.round(parent.height / 2)
+            radius: 100
+
+            MouseArea{
+                anchors.fill: parent
+                onClicked: console.log("rect5")
+            }
+        }
+    }
+
+    Item {
+        id:rect6_design
+        anchors{
+            top: rect1_design.bottom
+            left: rect5_design.right
+            margins: 15
+        }
+
+        width: 200
+        height: 200
+
+        Rectangle {
+            id: background6
+            anchors.fill: parent
+            color: "black"
+        }
+
+        RectangularGlow {
+            id: effect6
+            anchors.fill: rect6
+            glowRadius: 30
+            spread: 0.3
+            color: "#00FFFF"
+            cornerRadius: rect6.radius + glowRadius
+        }
+
+        Rectangle {
+            id: rect6
+            color: "black"
+            anchors.centerIn: parent
+            width: Math.round(parent.width / 2)
+            height: Math.round(parent.height / 2)
+            radius: 100
+
+            MouseArea{
+                anchors.fill: parent
+                onClicked: console.log("rect6")
+            }
+        }
+    }
+
+
+
+    Item {
+        id:rect7_design
+        anchors{
+            top: rect1_design.bottom
+            left: rect6_design.right
+            margins: 15
+        }
+
+        width: 200
+        height: 200
+
+        Rectangle {
+            id: background7
+            anchors.fill: parent
+            color: "black"
+        }
+
+        RectangularGlow {
+            id: effect7
+            anchors.fill: rect7
+            glowRadius: 30
+            spread: 0.3
+            color: "#00FF80"
+            cornerRadius: rect7.radius + glowRadius
+        }
+
+        Rectangle {
+            id: rect7
+            color: "black"
+            anchors.centerIn: parent
+            width: Math.round(parent.width / 2)
+            height: Math.round(parent.height / 2)
+            radius: 100
+
+            MouseArea{
+                anchors.fill: parent
+                onClicked: console.log("rect7")
+            }
+        }
+    }
+
+
+
+
+
     Image {
         id: img_back_widget1
         anchors {

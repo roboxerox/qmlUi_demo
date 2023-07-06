@@ -11,18 +11,19 @@ Rectangle{
     color: "grey"
 
     Item {
-        id: org_image
+        id: org_image_b
         anchors{
             top:parent.top
             left: parent.left
             margins: 25
+            leftMargin: 65
         }
 
         width: 400
         height: 400
 
         Image {
-            id: bug_org
+            id: bug_org_b
             source: "qrc:/images/bug.png"
             sourceSize: Qt.size(parent.width, parent.height)
             smooth: true
@@ -32,7 +33,7 @@ Rectangle{
         Text {
             id: brightness_contrast_val0
             anchors{
-                top:bug_org.bottom
+                top:bug_org_b.bottom
             }
             color: "white"
             text: qsTr("brightness_contrast 1.0")
@@ -42,9 +43,9 @@ Rectangle{
     property real iContrast: 0.0
 
     Item {
-        id:ench1_image
+        id:b_ench_image
         anchors{
-            left: org_image.right
+            left: org_image_b.right
             top:parent.top
             margins: 25
         }
@@ -53,7 +54,7 @@ Rectangle{
         height: 400
 
         Image {
-            id: bug1_enhance
+            id: bug1b_enhance
             source: "qrc:/images/bug.png"
             sourceSize: Qt.size(parent.width, parent.height)
             smooth: true
@@ -61,8 +62,8 @@ Rectangle{
         }
 
         BrightnessContrast {
-            anchors.fill: bug1_enhance
-            source: bug1_enhance
+            anchors.fill: bug1b_enhance
+            source: bug1b_enhance
             brightness: iBrightness
             contrast: iContrast
         }
@@ -70,7 +71,7 @@ Rectangle{
         Text {
             id: brightness_contrast_val1
             anchors{
-                top:bug1_enhance.bottom
+                top:bug1b_enhance.bottom
             }
             color: "white"
             text: qsTr("brightness: "+iBrightness + ", Contrast: "+iContrast)
@@ -83,7 +84,9 @@ Rectangle{
         spacing:25
         anchors {
             left: parent.left
-            top: org_image.bottom
+            top: org_image_b.bottom
+            leftMargin: 65
+            topMargin: 10
         }
 
 

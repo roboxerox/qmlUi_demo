@@ -1,30 +1,33 @@
 # qmlUi_demo
 
 This demo is using qt-qml which has include examples of :
-1. Button
-2. Status Bar
-3. Date Time
-4. Stack view
-5. Table view
-6. List view
-7. Layout (Grid/row/column)
-8. Dialog box
-9. Combo Box
-10. Label Clickable
-11. Image Hue & Saturation
-12. Image gamma Adjustment
-13. Image colorization
-14. Image brightness & Contrast
-15. Label with RectangularGlow
-16. Chart View (pie/Bar/line/spline)
-17. Tab view
 
+* Button
+* Status Bar
+* Date Time
+* Stack view
+* Table view
+* List view
+* Layout (Grid/row/column)
+* Dialog box
+* Combo Box
+* Label Clickable
+* Image Hue & Saturation
+* Image gamma Adjustment
+* Image colorization
+* Image brightness & Contrast
+* Label with RectangularGlow
+* Chart View (pie/Bar/line/spline)
+* Tab view
+* XML Read and create list view
+* Read and Write in text file
+* File dialog to select file
 
 ## Dependencies install
 
 		sudo apt update
 		sudo apt install build-essential qt5-default qtdeclarative5-dev
-  		sudo apt install qml-module-qtquick-dialog libqt5charts5-dev 
+		sudo apt install qml-module-qtquick-dialog libqt5charts5-dev 
 		
 		
 ## Build

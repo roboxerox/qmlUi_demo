@@ -6,23 +6,24 @@ import QtQuick.Controls 2.2
 
 
 Item {
+    id:grid_layout1
 
     ListModel {
         id : list_model
         ListElement {
             name:"Networking"
-            page: "qrc:/qmls/widget1.qml"
+            page: "qrc:/qmls/widgetNetwork.qml"
             img:"qrc:/images/icon1.png"
         }
         ListElement {
-            name:"Electronics"
-            page: "qrc:/qmls/ElectronicsDetails.qml"
+            name:"image layout"
+            page: "qrc:/qmls/imagesDetails.qml"
             img:"qrc:/images/ec.png"
         }
         ListElement {
-            name:"Server Arch"
-            page: "qrc:/qmls/ServerArch.qml"
-            img:"qrc:/images/servers.png"
+            name:"File Edit"
+            page: "qrc:/qmls/fileEdit.qml"
+            img:""
         }
         ListElement {
             name:"Tab Widget"
@@ -62,7 +63,6 @@ Item {
             width: 200
             height: 200
             color: "#D1C4E9"
-//             color: "transparent"
             radius: 10
 
             Image {

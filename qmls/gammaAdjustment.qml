@@ -11,18 +11,19 @@ Rectangle{
     color: "grey"
 
     Item {
-        id: org_image
+        id: org_image_g
         anchors{
             top:parent.top
             left: parent.left
             margins: 25
+            leftMargin: 65
         }
 
         width: 400
         height: 400
 
         Image {
-            id: bug_org
+            id: bug_org_g
             source: "qrc:/images/bug.png"
             sourceSize: Qt.size(parent.width, parent.height)
             smooth: true
@@ -32,7 +33,7 @@ Rectangle{
         Text {
             id: gamma_val0
             anchors{
-                top:bug_org.bottom
+                top:bug_org_g.bottom
             }
             color: "white"
             text: qsTr("gamma 1.0")
@@ -41,9 +42,9 @@ Rectangle{
     property real iGamma: 1.0
 
     Item {
-        id:ench1_image
+        id:g_ench1_image
         anchors{
-            left: org_image.right
+            left: org_image_g.right
             top:parent.top
             margins: 25
         }
@@ -52,7 +53,7 @@ Rectangle{
         height: 400
 
         Image {
-            id: bug1_enhance
+            id: bug1g_enhance
             source: "qrc:/images/bug.png"
             sourceSize: Qt.size(parent.width, parent.height)
             smooth: true
@@ -60,15 +61,15 @@ Rectangle{
         }
 
         GammaAdjust {
-            anchors.fill: bug1_enhance
-            source: bug1_enhance
+            anchors.fill: bug1g_enhance
+            source: bug1g_enhance
             gamma: iGamma       // The value ranges from 0.0 (darkest) to inf (lightest). By default, the property is set to 1.0 (no change).
         }
 
         Text {
             id: gamma_val1
             anchors{
-                top:bug1_enhance.bottom
+                top:bug1g_enhance.bottom
             }
             color: "white"
             text: qsTr("gamma "+iGamma)
@@ -81,12 +82,13 @@ Rectangle{
         spacing:25
         anchors {
             left: parent.left
-            top: org_image.bottom
+            top: org_image_g.bottom
+            leftMargin: 65
         }
 
 
         Text {
-            id: hue_text
+            id: gamma_text
             width: 100
             text: qsTr("gamma value :")
             font.pixelSize: 20
