@@ -170,7 +170,7 @@ Rectangle {
 
     ///// EXIT Button
     Image {
-        id: img_back_gamma
+        id: img_back_hue
         anchors {
             right: parent.right
             bottom: parent.bottom

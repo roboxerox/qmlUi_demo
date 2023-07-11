@@ -81,7 +81,7 @@ Rectangle {
 
 
    Image {
-       id: img_back_widget1
+       id: img_back_tabwidget1
        anchors {
            right: parent.right
            bottom: parent.bottom

@@ -2,21 +2,36 @@
 	<interface>
 		<ifname>local</ifname>
 		<ip_addr>127.0.0.1</ip_addr>
+		<mac_addr>00:00:00:00:00:00</mac_addr>
 	</interface>
 	<interface>
 		<ifname>enp1s0</ifname>
 		<ip_addr>192.168.0.232</ip_addr>
+		<mac_addr>02:42:31:e9:36:06</mac_addr>
 	</interface>
 	<interface>
 		<ifname>enp2s0</ifname>
 		<ip_addr>100.10.0.14</ip_addr>
+		<mac_addr>54:e8:ad:15:b2:3c</mac_addr>
 	</interface>
 	<interface>
 		<ifname>enp3s0</ifname>
 		<ip_addr>192.168.1.5</ip_addr>
+		<mac_addr>ad:e1:fd:17:d9:30</mac_addr>
 	</interface>
 	<interface>
 		<ifname>enp4s0</ifname>
 		<ip_addr>10.120.11.28</ip_addr>
+		<mac_addr>ad:e1:fd:17:d9:31</mac_addr>
+	</interface>
+	<interface>
+		<ifname>enp5s0</ifname>
+		<ip_addr>71.120.11.8</ip_addr>
+		<mac_addr>ad:e1:fd:17:d9:32</mac_addr>
+	</interface>
+	<interface>
+		<ifname>enp6s0</ifname>
+		<ip_addr>160.0.1.15</ip_addr>
+		<mac_addr>ad:e1:fd:17:d9:33</mac_addr>
 	</interface>
 </eth>

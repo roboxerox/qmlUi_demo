@@ -300,7 +300,7 @@ Rectangle
 
 
     Image {
-        id: img_back_widget1
+        id: img_back_recDesign
         anchors {
             right: parent.right
             bottom: parent.bottom

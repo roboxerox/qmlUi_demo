@@ -50,7 +50,6 @@ Item {
             page: "qrc:/qmls/gammaAdjustment.qml"
             img:""
         }
-
     }
 
     GridView {
@@ -75,11 +74,8 @@ Item {
                 color: "white"
                 text: name
                 anchors.top: backgroung_img.bottom
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
                 font.pixelSize: 20
                 font.bold: true
-
             }
 
             MouseArea {
@@ -108,12 +104,11 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                stack_view.push("qrc:/qmls/GridLay2.qml")
+//                stack_view.push("qrc:/qmls/GridLay2.qml")
+                stack_view.push("qrc:/qmls/flipView.qml")
             }
         }
     }
-
-
 
 
     Image {

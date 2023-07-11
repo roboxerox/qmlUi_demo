@@ -12,5 +12,6 @@ bool Reader::m_isReadable()
 
 void Reader::m_setReadable(bool val)
 {
+    qDebug()<<__FUNCTION__ << "val = "<<val << "b_isReadMode = " <<b_isReadMode;
     b_isReadMode = val;
 }

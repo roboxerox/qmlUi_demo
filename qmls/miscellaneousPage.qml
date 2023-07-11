@@ -49,13 +49,19 @@ Rectangle {
         smooth: true
         antialiasing: true
 
-        source: (f_name != "null" && f_name != "")?f_name:"qrc:/images/BG001.png"
+        SequentialAnimation on y {
+            loops: Animation.Infinite
+            NumberAnimation { to: 450 - label_pix.height; easing.type: Easing.OutBounce; duration: 2000 }
+            PauseAnimation { duration: 1000 }
+            NumberAnimation { to: 120; easing.type: Easing.OutQuad; duration: 1000 }
+        }
+
+        source: (f_name != "null" && f_name != "")?f_name:"qrc:/images/qml-ui-demo-logo.png"
     }
 
 
-
     Image {
-        id: img_back_widget1
+        id: img_back_misc
         anchors {
             right: parent.right
             bottom: parent.bottom

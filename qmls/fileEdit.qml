@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.7
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import QtQuick.Dialogs 1.2
@@ -55,7 +55,7 @@ Rectangle {
         id: error_box
         title: "Error"
         text: str_msg
-        icon: StandardIcon.Information
+        icon: StandardIcon.Warning
         standardButtons: StandardButton.Ok
         onAccepted: {
             close()
@@ -77,33 +77,60 @@ Rectangle {
         return request.status;
     }
 
+
     FileDialog {
         id: openFileDialog
-        nameFilters: ["Text files (*.txt)", "All files (*)"]
+        nameFilters: ["Text files (*.txt)", "xml files (*.xml)", "All files (*)"]
         onAccepted: textEdit.text = openFile(openFileDialog.fileUrl)
     }
 
     FileDialog {
         id: saveFileDialog
         selectExisting: false
-        nameFilters: ["Text files (*.txt)", "All files (*)"]
+        nameFilters: ["Text files (*.txt)", "xml files (*.xml)", "All files (*)"]
         onAccepted: {
-            saveFile(saveFileDialog.fileUrl, textEdit.text)
-            textEdit.clear()
+            if(saveFile(saveFileDialog.fileUrl, textEdit.text))
+                textEdit.clear()
+            else
+            {
+                str_msg = "Unable to save " +saveFileDialog.fileUrl
+                error_box.open()
+            }
+        }
+    }
+
+    Image {
+        id: text_img
+        anchors{
+            top:btn_row.bottom
+            left: parent.left
+            topMargin: 20
+
+        }
+        sourceSize.width: 800
+        sourceSize.height: 450
+        smooth: true
+        antialiasing: true
+        source: "qrc:/images/BG001.png"
+
+        // flip images
+        transform:  Matrix4x4 {
+            matrix: Qt.matrix4x4( -1, 0, 0, text_img.width, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
         }
     }
 
 
-    TextArea {
-        id: textEdit
-        anchors{
-            top:btn_row.bottom
-            left: parent.left
-            topMargin: 10
+    ScrollView{
+        id: scroll_view
+        anchors.fill: text_img
+        TextArea {
+            id: textEdit
+            color: "white"
+            font.pixelSize: 15
+            text:""
+            wrapMode: Text.WordWrap
+            padding: 0
         }
-        color: "white"
-        font.pixelSize: 20
-        text:""
     }
 
 

@@ -8,7 +8,7 @@ Rectangle {
     color: "transparent"
 
     ListModel {
-        id: coachModel
+        id: emplyModel
         ListElement {
             emply_id: "1200"
             emply_dep: "R&D h/w"
@@ -65,6 +65,7 @@ Rectangle {
         id: table_view
         height: parent.height - 100
         width: parent.width
+
         TableViewColumn {
             role: "emply_id"
             title: "EMPLOYEE ID"
@@ -92,7 +93,7 @@ Rectangle {
                 checked: styleData.value
             }
         }
-        model: coachModel
+        model: emplyModel
 
         itemDelegate: Item {
             id: item_
@@ -102,13 +103,13 @@ Rectangle {
                 elide: Text.ElideRight
                 text: styleData.value
                 font.pixelSize: 15
+                color: "purple"
             }
         }
 
         onClicked: {
-            //              console.log(coachModel.get(row).emply_id + ' ' + coachModel.get(row).emply_name)
-            str_id = coachModel.get(row).emply_id
-            str_name = coachModel.get(row).emply_name
+            str_id = emplyModel.get(row).emply_id
+            str_name = emplyModel.get(row).emply_name
         }
     }// TableView
 
@@ -141,7 +142,7 @@ Rectangle {
 
 
     Image {
-        id: img_back_tablewidget1
+        id: img_back_tableView
         anchors {
             right: parent.right
             bottom: parent.bottom

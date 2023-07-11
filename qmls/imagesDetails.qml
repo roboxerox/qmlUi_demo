@@ -73,7 +73,7 @@ Rectangle {
 
 
     Image {
-        id: img_back_ec
+        id: img_back_imgDetails
         anchors {
             right: parent.right
             bottom: parent.bottom
