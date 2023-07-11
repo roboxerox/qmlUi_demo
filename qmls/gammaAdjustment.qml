@@ -102,7 +102,7 @@ Rectangle{
             model: [ "0.0", "0.2", "0.4","0.6","0.8","1.0","1.2","1.4","1.6","1.8","2.0","2.0","2.4","2.6","2.8","3.0","3.5","4.0","4.5","5.0"]
             currentIndex: 5
             onCurrentIndexChanged:{
-                iGamma = gamma_combobox.currentText
+                iGamma = gamma_combobox.textAt(currentIndex)
             }
         }
     }

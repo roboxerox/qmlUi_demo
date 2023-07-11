@@ -107,7 +107,7 @@ Rectangle {
             model: [ "-1", "-0.9", "-0.8","-0.7","-0.6","-0.5","-0.4","-0.3","-0.2","-0.1","0","0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1" ]
             currentIndex: 10
             onCurrentIndexChanged:{
-                iHue = hue_combobox.currentText
+                iHue = hue_combobox.textAt(currentIndex)
             }
         }
 
@@ -126,7 +126,7 @@ Rectangle {
             model: [ "-1", "-0.9", "-0.8","-0.7","-0.6","-0.5","-0.4","-0.3","-0.2","-0.1","0","0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1" ]
             currentIndex: 10
             onCurrentIndexChanged:{
-                iSaturation = saturation_combobox.currentText
+                iSaturation = saturation_combobox.textAt(currentIndex)
             }
         }
 
@@ -145,8 +145,9 @@ Rectangle {
             model: [ "-1", "-0.9", "-0.8","-0.7","-0.6","-0.5","-0.4","-0.3","-0.2","-0.1","0","0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1" ]
             currentIndex: 10
             onCurrentIndexChanged:{
-                ilightness = lightness_combobox.currentText
+                ilightness =  lightness_combobox.textAt(currentIndex)
             }
+
         }
     }
 

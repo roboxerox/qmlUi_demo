@@ -70,22 +70,18 @@ Rectangle {
         TableViewColumn {
             role: "emply_id"
             title: "EMPLOYEE ID"
-            //              width: 200
         }
         TableViewColumn {
             role: "emply_dep"
             title: "EMPLOYEE DEPARTMENT"
-            //              width: 200
         }
         TableViewColumn {
             role: "emply_role"
             title: "EMPLOYEE ROLE"
-            //              width: 200
         }
         TableViewColumn {
             role: "emply_name"
             title: "EMPLOYEE NAME"
-            //              width: 200
         }
         TableViewColumn {
             role: "check"

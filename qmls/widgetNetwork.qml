@@ -66,6 +66,7 @@ Item {
         ListView{
             id:list
             anchors.fill: parent
+            anchors.margins: 1
             width: parent.width
             height: parent.height
             model: xmlModel
@@ -100,24 +101,17 @@ Item {
     }
 
     property bool isPressedHold: false
-    property int counter: 0  // integer . The default value is 0
 
     function increase()
     {
-        if(counter < 100)
-        {
-            counter += 1
-            slider.value = counter
-        }
+        if(slider.value < 100)
+            slider.value += 1
     }
 
     function decrease()
     {
-        if(counter > 0)
-        {
-            counter -= 1
-            slider.value = counter
-        }
+        if(slider.value > 0)
+            slider.value -= 1
     }
 
     RowLayout{
@@ -155,7 +149,7 @@ Item {
             width: parent.width/4
             font.pixelSize: 20
             color: "white"
-            text: counter
+            text: slider.value
         }
 
         Button {
@@ -204,11 +198,11 @@ Item {
         from: 0
         value: 0
         to: 100
+        stepSize: 1
         snapMode: Slider.SnapOnRelease
         onValueChanged:
         {
-//            console.log("slider " + value)
-            counter = value
+            console.log("slider " + value)
         }
 
     }
