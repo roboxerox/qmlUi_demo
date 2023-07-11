@@ -34,7 +34,7 @@ This demo is using qt-qml which has include examples of :
 
 		git clone https://github.com/roboxerox/qmlUi_demo.git
 		cd qmlUi_demo
-		mkdir qbuild && cd qbuild
+		mkdir q_build && cd q_build
 		qmake ..
 		make
 		
