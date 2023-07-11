@@ -13,7 +13,7 @@ Rectangle {
             emply_id: "1200"
             emply_dep: "R&D h/w"
             emply_role: "Sr. Developer"
-            emply_name: "Jack M"
+            emply_name: "Jack Miller"
             check: true
         }
         ListElement {
@@ -27,38 +27,39 @@ Rectangle {
             emply_id: "1211"
             emply_dep: "R&D s/w"
             emply_role: "Sr. Developer"
-            emply_name: "Mike"
+            emply_name: "Mike J. Khan"
             check: false
         }
         ListElement {
             emply_id: "1212"
             emply_dep: "Sales"
             emply_role: "Sales Executive"
-            emply_name: "Peter will"
+            emply_name: "Peter Will"
             check: true
         }
         ListElement {
             emply_id: "1213"
             emply_dep: "Production"
             emply_role: "Production manager"
-            emply_name: "Rammsy"
+            emply_name: "Rammsy Roger"
             check: false
         }
         ListElement {
             emply_id: "1220"
             emply_dep: "Managment"
             emply_role: "HR Executive"
-            emply_name: "Jacksson smith"
+            emply_name: "Lara Smith"
             check: true
         }
         ListElement {
             emply_id: "1110"
             emply_dep: "IT"
             emply_role: "Sr. IT Support"
-            emply_name: "Billy more"
+            emply_name: "Billy Batsson"
             check: false
         }
     }
+
 
 
     TableView {
@@ -123,6 +124,7 @@ Rectangle {
             top: table_view.bottom
             left: parent.left
         }
+        font.pixelSize: 20
         height: 45
         color: "lightgrey"
         text: str_id
@@ -134,6 +136,7 @@ Rectangle {
             top: table_view.bottom
             left: selected_id.right
         }
+        font.pixelSize: 20
         height: 45
         color: "lightgrey"
         text: " => "+str_name
