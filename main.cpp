@@ -1,17 +1,14 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QApplication>
-//#include <fileio.h>
 #include <helper.h>
 #include <reader.h>
+#include <filecheck.h>
 
 
 int main(int argc, char *argv[])
 {
 //    QGuiApplication app(argc, argv);
-
-//    FileIO fio;
-//    fio.parse(":/ip_links.xml");
 
 //    QQmlApplicationEngine engine;
 //    engine.load(QUrl(QStringLiteral("qrc:/qmls/main.qml")));
@@ -22,18 +19,19 @@ int main(int argc, char *argv[])
 
 
 
-
-
-
-
-
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication app(argc, argv);
+    app.setWindowIcon(QIcon(":/images/qml-ui-demo-logo.png"));
+
     QQmlApplicationEngine engine;
+    // export cpp classes method 1
     Helper helper;
     Reader reader;
     engine.rootContext()->setContextProperty(QStringLiteral("helper"), &helper);
     engine.rootContext()->setContextProperty(QStringLiteral("reader"), &reader);
+
+    // export cpp classes method 2
+    qmlRegisterType< FileCheck > ("File_Check",1,0, "FileCheck");
 
     const QUrl url(QStringLiteral("qrc:/qmls/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

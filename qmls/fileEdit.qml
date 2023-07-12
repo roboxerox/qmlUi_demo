@@ -5,6 +5,8 @@ import QtQuick.Dialogs 1.2
 import QtQuick.Controls.Styles 1.4
 import QtQuick.XmlListModel 2.0
 
+import File_Check 1.0
+
 Rectangle {
     id: file_edit_page
     anchors.fill: parent
@@ -42,7 +44,8 @@ Rectangle {
                 }
                 else
                 {
-                    error_box.open()
+                    msg_type = 1
+                    message_box.open()
                 }
             }
         }
@@ -50,12 +53,13 @@ Rectangle {
     }
 
     property string str_msg: "Text is empty"
+    property int msg_type: 0
 
     MessageDialog {
-        id: error_box
-        title: "Error"
+        id: message_box
+        title: msg_type > 0 ? "Error" : "Successful"
         text: str_msg
-        icon: StandardIcon.Warning
+        icon: msg_type > 0 ? StandardIcon.Warning : StandardIcon.Information
         standardButtons: StandardButton.Ok
         onAccepted: {
             close()
@@ -77,6 +81,9 @@ Rectangle {
         return request.status;
     }
 
+    FileCheck {
+        id: obj_fileCheck
+    }
 
     FileDialog {
         id: openFileDialog
@@ -89,13 +96,20 @@ Rectangle {
         selectExisting: false
         nameFilters: ["Text files (*.txt)", "xml files (*.xml)", "All files (*)"]
         onAccepted: {
-            if(saveFile(saveFileDialog.fileUrl, textEdit.text))
-                textEdit.clear()
-            else
+            saveFile(saveFileDialog.fileUrl, textEdit.text)
+            if(obj_fileCheck.sl_exist(saveFileDialog.fileUrl))
             {
-                str_msg = "Unable to save " +saveFileDialog.fileUrl
-                error_box.open()
+                str_msg = "successful to save " +saveFileDialog.fileUrl
+                msg_type = 0
+                message_box.open()
+                textEdit.clear()
             }
+            else {
+                str_msg = "Unable to save " +saveFileDialog.fileUrl
+                msg_type = 1
+                message_box.open()
+            }
+            console.log(obj_fileCheck.sl_Size("save.txt"))
         }
     }
 

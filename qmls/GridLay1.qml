@@ -104,8 +104,8 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-//                stack_view.push("qrc:/qmls/GridLay2.qml")
-                stack_view.push("qrc:/qmls/flipView.qml")
+                stack_view.push("qrc:/qmls/GridLay2.qml")
+//                stack_view.push("qrc:/qmls/flipView.qml")
             }
         }
     }

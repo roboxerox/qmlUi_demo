@@ -4,9 +4,9 @@ QT += qml quick core charts network
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    fileio.cpp \
     helper.cpp \
-    reader.cpp
+    reader.cpp \
+    filecheck.cpp
 
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
@@ -32,9 +32,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    fileio.h \
     helper.h \
-    reader.h
+    reader.h \
+    filecheck.h
 
 RESOURCES += \
     icons.qrc \

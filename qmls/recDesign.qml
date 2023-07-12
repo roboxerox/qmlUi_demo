@@ -25,8 +25,8 @@ Rectangle
         RectangularGlow {
             id: effect
             anchors.fill: rect
-            glowRadius: 20
-            spread: 0.2
+            glowRadius: 30
+            spread: 0.3
             color: "white"
             cornerRadius: rect.radius + glowRadius
         }
@@ -65,8 +65,8 @@ Rectangle
         RectangularGlow {
             id: effect2
             anchors.fill: rect2
-            glowRadius: 20
-            spread: 0.2
+            glowRadius: 30
+            spread: 0.3
             color: "#55ff55"
             cornerRadius: rect2.radius + glowRadius
         }
@@ -106,8 +106,8 @@ Rectangle
         RectangularGlow {
             id: effect3
             anchors.fill: rect3
-            glowRadius: 20
-            spread: 0.2
+            glowRadius: 30
+            spread: 0.3
             color: "#5555ff"
             cornerRadius: rect3.radius + glowRadius
         }
@@ -148,9 +148,9 @@ Rectangle
         RectangularGlow {
             id: effect4
             anchors.fill: rect4
-            glowRadius: 30
-            spread: 0.3
-            color: "#FF0000"
+            glowRadius: 40
+            spread: 0.4
+            color: "#F80000"
             cornerRadius: rect4.radius + glowRadius
         }
 
@@ -161,6 +161,13 @@ Rectangle
             width: Math.round(parent.width / 2)
             height: Math.round(parent.height / 2)
             radius: 100
+
+            Text {
+                id: text4
+                anchors.centerIn: parent
+                text: qsTr("RED")
+                color: "#F80000"
+            }
 
             MouseArea{
                 anchors.fill: parent
@@ -190,8 +197,8 @@ Rectangle
         RectangularGlow {
             id: effect5
             anchors.fill: rect5
-            glowRadius: 30
-            spread: 0.3
+            glowRadius: 40
+            spread: 0.4
             color: "#FFF010"
             cornerRadius: rect5.radius + glowRadius
         }
@@ -203,6 +210,13 @@ Rectangle
             width: Math.round(parent.width / 2)
             height: Math.round(parent.height / 2)
             radius: 100
+
+            Text {
+                id: text5
+                anchors.centerIn: parent
+                text: qsTr("YELLOW")
+                color: "#FFF010"
+            }
 
             MouseArea{
                 anchors.fill: parent
@@ -231,8 +245,8 @@ Rectangle
         RectangularGlow {
             id: effect6
             anchors.fill: rect6
-            glowRadius: 30
-            spread: 0.3
+            glowRadius: 40
+            spread: 0.4
             color: "#00FFFF"
             cornerRadius: rect6.radius + glowRadius
         }
@@ -274,8 +288,8 @@ Rectangle
         RectangularGlow {
             id: effect7
             anchors.fill: rect7
-            glowRadius: 30
-            spread: 0.3
+            glowRadius: 50
+            spread: 0.4
             color: "#00FF80"
             cornerRadius: rect7.radius + glowRadius
         }
@@ -294,8 +308,6 @@ Rectangle
             }
         }
     }
-
-
 
 
 

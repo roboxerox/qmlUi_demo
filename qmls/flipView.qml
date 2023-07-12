@@ -38,7 +38,7 @@ Item {
         ListElement {
             name:"None"
             page: ""
-            icon: "qrc:/images/keypad_6.png"
+            icon: "qrc:/images/keypad_7.png"
         }
     }
 
@@ -167,7 +167,7 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                stack_view.push("qrc:/qmls/GridLay1.qml")
+                stack_view.push("qrc:/qmls/GridLay2.qml")
             }
         }
     }

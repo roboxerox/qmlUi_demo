@@ -147,7 +147,6 @@ Rectangle {
             onCurrentIndexChanged:{
                 ilightness =  lightness_combobox.textAt(currentIndex)
             }
-
         }
     }
 
