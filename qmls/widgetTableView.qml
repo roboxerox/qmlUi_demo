@@ -108,6 +108,8 @@ Rectangle {
             str_id = emplyModel.get(row).emply_id
             str_name = emplyModel.get(row).emply_name
         }
+
+
     }// TableView
 
 
@@ -115,7 +117,7 @@ Rectangle {
     property string str_name: ""
 
     Text {
-        id: selected_id
+        id: selected_details
         anchors{
             top: table_view.bottom
             left: parent.left
@@ -123,19 +125,7 @@ Rectangle {
         font.pixelSize: 20
         height: 45
         color: "lightgrey"
-        text: str_id
-    }
-
-    Text {
-        id: selected_name
-        anchors{
-            top: table_view.bottom
-            left: selected_id.right
-        }
-        font.pixelSize: 20
-        height: 45
-        color: "lightgrey"
-        text: " => "+str_name
+        text: str_id !=""? "You have selected " + str_name + " ( " + str_id + " ) ." : ""
     }
 
 

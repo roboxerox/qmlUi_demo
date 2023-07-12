@@ -83,6 +83,8 @@ Item {
             anchors.fill: parent
             onClicked: {
 //                console.info("image clicked!")
+                stack_view.push("qrc:/qmls/flipView.qml")
+
             }
         }
     }

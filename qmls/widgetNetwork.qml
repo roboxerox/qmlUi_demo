@@ -92,12 +92,27 @@ Item {
         anchors{
             left: rec_list.right
             top: rec_list.top
-            margins: 40
+            leftMargin: 40
+            topMargin: 20
         }
 
         font.pixelSize: 20
         color: "white"
         text: qsTr(str_selected)
+    }
+
+    property string str_reader: ""
+    Text {
+        id: read_satus
+        anchors{
+            top: selected.bottom
+            left: rec_list.right
+            leftMargin: 40
+            topMargin: 20
+        }
+        font.pixelSize: 20
+        text: qsTr("Reader = " + str_reader)
+        color: "white"
     }
 
     property bool isPressedHold: false
@@ -121,8 +136,8 @@ Item {
         width: parent.width / 3
         spacing:5
         anchors {
-            left: parent.left
-            top: rec_list.bottom
+            left: rec_list.right
+            top: read_satus.bottom
             leftMargin: 40
             topMargin: 10
         }
@@ -172,25 +187,14 @@ Item {
         }
     }
 
-    property string str_reader: ""
-    Text {
-        id: read_satus
-        anchors{
-            top: selected.bottom
-            left: rec_list.right
-            margins: 40
-        }
-        font.pixelSize: 20
-        text: qsTr("Reader = " + str_reader)
-        color: "white"
-    }
+
 
 
     Slider {
         id: slider
         anchors{
             top: misc_row.bottom
-            left: parent.left
+            left: rec_list.right
             leftMargin: 40
         }
         width: 500
@@ -207,9 +211,52 @@ Item {
 
     }
 
+    // custom  ProgressBar
+    function set_progress(){
+        if(value <= 50)
+            value += 1
+        if(value > 50)
+            value = 0
+    }
+
+    property double maximum: 50
+    property double value:   0
+    property double minimum: 0
+
+    Timer {
+           id: pbTimer
+           interval: 1000
+           repeat: true
+           running: true
+           triggeredOnStart: true
+           onTriggered: set_progress()
+       }
 
 
+    Rectangle {
+        id: progress_bar_border
+        anchors{
+            top: rec_list.bottom
+            left: parent.left
+            leftMargin: 40
+            topMargin: 20
+        }
+        width: 800;  height: 40
 
+        border.width: 0.05 * progress_bar_border.height
+        radius: 0.5 * height
+
+        Rectangle {
+            visible: value > minimum
+            x: 0.1 * progress_bar_border.height;  y: 0.1 * progress_bar_border.height
+            width: Math.max(height,
+                            Math.min((value - minimum) / (maximum - minimum) * (parent.width - 0.2 * progress_bar_border.height),
+                                     parent.width - 0.2 * progress_bar_border.height)) // clip
+            height: 0.8 * progress_bar_border.height
+            color: 'blue'
+            radius: parent.radius
+        }
+    }
 
 //    // FileDialog
 //    FileDialog {
@@ -256,12 +303,12 @@ Item {
         antialiasing: true
         source: "qrc:/images/Back_txt.png"
 
-//        MouseArea {
-//            anchors.fill: parent
-//            onClicked: {
-//                main_loader.source = "qrc:/qmls/StackViewPage.qml"
-//            }
-//        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                main_loader.source = "qrc:/qmls/StackViewPage.qml"
+            }
+        }
     }
 
 }
