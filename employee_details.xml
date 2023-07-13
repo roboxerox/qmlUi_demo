@@ -1,0 +1,58 @@
+<details>
+	<emply>
+		<emply_id>1200</emply_id>
+		<emply_dep>RnD h/w</emply_dep>
+		<emply_role>Sr. Developer</emply_role>
+		<emply_name>Jack Miller</emply_name>
+		<check>0</check>
+	</emply>
+	<emply>
+		<emply_id>1210</emply_id>
+		<emply_dep>RnD h/w</emply_dep>
+		<emply_role>Manager</emply_role>
+		<emply_name>Alina Jose</emply_name>
+		<check>0</check>
+	</emply>
+	<emply>
+		<emply_id>1211</emply_id>
+		<emply_dep>RnD s/w</emply_dep>
+		<emply_role>Sr. Developer</emply_role>
+		<emply_name>Mike J. Khan</emply_name>
+		<check>1</check>
+	</emply>
+	<emply>
+		<emply_id>1212</emply_id>
+		<emply_dep>sales</emply_dep>
+		<emply_role>Sales Executive</emply_role>
+		<emply_name>Peter Will</emply_name>
+		<check>1</check>
+	</emply>
+	<emply>
+		<emply_id>1213</emply_id>
+		<emply_dep>Production</emply_dep>
+		<emply_role>Production Manager</emply_role>
+		<emply_name>Rammsyee Roger</emply_name>
+		<check>0</check>
+	</emply>
+	<emply>
+		<emply_id>1220</emply_id>
+		<emply_dep>Management</emply_dep>
+		<emply_role>HR Executive</emply_role>
+		<emply_name>Lara Smith</emply_name>
+		<check>1</check>
+	</emply>
+	<emply>
+		<emply_id>1110</emply_id>
+		<emply_dep>IT</emply_dep>
+		<emply_role>Sr. IT Support</emply_role>
+		<emply_name>Billy Batsson</emply_name>
+		<check>0</check>
+	</emply>
+	<emply>
+		<emply_id>1100</emply_id>
+		<emply_dep>RnD s/w</emply_dep>
+		<emply_role>System Design Engg.</emply_role>
+		<emply_name>Ketty Cooper</emply_name>
+		<check>1</check>
+	</emply>
+</details>

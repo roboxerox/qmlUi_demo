@@ -61,27 +61,35 @@ Item {
         delegate: Rectangle {
             width: 200
             height: 200
-            color: "#D1C4E9"
+            color: "white"
             radius: 10
+            Rectangle{
+                anchors.centerIn: parent
+                width: 194
+                height: 194
+                color: "#D1C4E9"
+                radius: 10
 
-            Image {
-                id: backgroung_img
-                anchors.fill: parent
-                source: img
-            }
+                Image {
+                    id: backgroung_img
+                    anchors.fill: parent
+                    source: img
+                }
 
-            Text {
-                color: "white"
-                text: name
-                anchors.top: backgroung_img.bottom
-                font.pixelSize: 20
-                font.bold: true
-            }
+                Text {
+                    color: "white"
+                    text: name
+                    anchors.top: backgroung_img.bottom
+                    anchors.topMargin: 4
+                    font.pixelSize: 20
+                    font.bold: true
+                }
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    main_loader.source = page
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        main_loader.source = page
+                    }
                 }
             }
         }
@@ -105,7 +113,6 @@ Item {
             anchors.fill: parent
             onClicked: {
                 stack_view.push("qrc:/qmls/GridLay2.qml")
-//                stack_view.push("qrc:/qmls/flipView.qml")
             }
         }
     }

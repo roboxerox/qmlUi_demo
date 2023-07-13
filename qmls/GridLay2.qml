@@ -43,22 +43,29 @@ Item {
         delegate: Rectangle {
             width: 200
             height: 200
-            color: "#D1C4E9"
-            radius: 5
-            Text {
-                color: "white"
-                text: name
+            color: "white"
+            radius: 10
+            Rectangle{
                 anchors.centerIn: parent
-                font.pixelSize: 20
-                font.bold: true
+                width: 194
+                height: 194
+                color: "#D1C4E9"
+                radius: 10
+                Text {
+                    color: "white"
+                    text: name
+                    anchors.centerIn: parent
+                    font.pixelSize: 20
+                    font.bold: true
 
-            }
+                }
 
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    main_loader.source = page
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        main_loader.source = page
+                    }
                 }
             }
         }
@@ -107,7 +114,6 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-//                main_loader.source = "qrc:/qmls/GridLay1.qml"
                 stack_view.push("qrc:/qmls/GridLay1.qml")
             }
         }

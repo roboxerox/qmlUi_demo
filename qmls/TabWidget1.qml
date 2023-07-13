@@ -45,8 +45,10 @@ Rectangle {
            Text {
                id: one_tab_text
                text: qsTr("ONE'S WIDGET")
+               font.family: "Tibetan Machine Uni"
+               style: Text.Outline
                anchors.centerIn: parent
-               color: "white"
+               color: "transparent"
                font.pixelSize: 40
            }
        }
@@ -58,6 +60,7 @@ Rectangle {
            Text {
                id: two_tab_text
                text: qsTr("TWO'S WIDGET")
+               font.family: "Tibetan Machine Uni"
                anchors.centerIn: parent
                color: "white"
                font.pixelSize: 40
@@ -66,11 +69,12 @@ Rectangle {
 
        Rectangle{
            id: tab_three
-           color: "#A01A0C"
+           color: "#A91A0C"
 
            Text {
                id: three_tab_text
                text: qsTr("THREE'S WIDGET")
+               font.family: "Tibetan Machine Uni"
                anchors.centerIn: parent
                color: "white"
                font.pixelSize: 40
@@ -101,6 +105,4 @@ Rectangle {
            }
        }
    }
-
-
 }

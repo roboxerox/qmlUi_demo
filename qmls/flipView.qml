@@ -36,8 +36,8 @@ Item {
             icon: "qrc:/images/keypad_6.png"
         }
         ListElement {
-            name:"None"
-            page: ""
+            name:"WebCam"
+            page: "qrc:/qmls/webCam.qml"
             icon: "qrc:/images/keypad_7.png"
         }
     }
@@ -79,8 +79,9 @@ Item {
 
         PathView {
             id: view
+            rotation: 0
             anchors.fill: parent
-//            pathItemCount: 3
+            //            pathItemCount: 3
 //            anchors.bottomMargin: 150
 //            anchors.topMargin: 50
 //            anchors.leftMargin: 100

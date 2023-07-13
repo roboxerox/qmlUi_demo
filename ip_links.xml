@@ -29,7 +29,7 @@
 		<ip_addr>71.120.11.8</ip_addr>
 		<mac_addr>ad:e1:fd:17:d9:32</mac_addr>
 	</interface>
-	<interface>
+        <interface>
 		<ifname>enp6s0</ifname>
 		<ip_addr>160.0.1.15</ip_addr>
 		<mac_addr>ad:e1:fd:17:d9:33</mac_addr>

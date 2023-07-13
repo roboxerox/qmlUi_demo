@@ -109,7 +109,6 @@ Rectangle {
                 msg_type = 1
                 message_box.open()
             }
-            console.log(obj_fileCheck.sl_Size("save.txt"))
         }
     }
 
@@ -134,7 +133,7 @@ Rectangle {
     }
 
 
-    ScrollView{
+    ScrollView {
         id: scroll_view
         anchors.fill: text_img
         TextArea {
