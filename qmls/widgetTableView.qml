@@ -1,63 +1,78 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.2
 import QtQuick.Controls 1.4
+import QtQuick.XmlListModel 2.0
+
 
 Rectangle {
     id: table_view_page
     anchors.fill: parent
     color: "transparent"
 
-    ListModel {
+//    ListModel {
+//        id: emplyModel
+//        ListElement {
+//            emply_id: "1200"
+//            emply_dep: "R&D h/w"
+//            emply_role: "Sr. Developer"
+//            emply_name: "Jack Miller"
+//            check: true
+//        }
+//        ListElement {
+//            emply_id: "1210"
+//            emply_dep: "R&D h/w"
+//            emply_role: "Manager"
+//            emply_name: "Alina jose"
+//            check: true
+//        }
+//        ListElement {
+//            emply_id: "1211"
+//            emply_dep: "R&D s/w"
+//            emply_role: "Sr. Developer"
+//            emply_name: "Mike J. Khan"
+//            check: false
+//        }
+//        ListElement {
+//            emply_id: "1212"
+//            emply_dep: "Sales"
+//            emply_role: "Sales Executive"
+//            emply_name: "Peter Will"
+//            check: true
+//        }
+//        ListElement {
+//            emply_id: "1213"
+//            emply_dep: "Production"
+//            emply_role: "Production manager"
+//            emply_name: "Rammsy Roger"
+//            check: false
+//        }
+//        ListElement {
+//            emply_id: "1220"
+//            emply_dep: "Managment"
+//            emply_role: "HR Executive"
+//            emply_name: "Lara Smith"
+//            check: true
+//        }
+//        ListElement {
+//            emply_id: "1110"
+//            emply_dep: "IT"
+//            emply_role: "Sr. IT Support"
+//            emply_name: "Billy Batsson"
+//            check: false
+//        }
+//    }
+
+    XmlListModel {
         id: emplyModel
-        ListElement {
-            emply_id: "1200"
-            emply_dep: "R&D h/w"
-            emply_role: "Sr. Developer"
-            emply_name: "Jack Miller"
-            check: true
-        }
-        ListElement {
-            emply_id: "1210"
-            emply_dep: "R&D h/w"
-            emply_role: "Manager"
-            emply_name: "Alina jose"
-            check: true
-        }
-        ListElement {
-            emply_id: "1211"
-            emply_dep: "R&D s/w"
-            emply_role: "Sr. Developer"
-            emply_name: "Mike J. Khan"
-            check: false
-        }
-        ListElement {
-            emply_id: "1212"
-            emply_dep: "Sales"
-            emply_role: "Sales Executive"
-            emply_name: "Peter Will"
-            check: true
-        }
-        ListElement {
-            emply_id: "1213"
-            emply_dep: "Production"
-            emply_role: "Production manager"
-            emply_name: "Rammsy Roger"
-            check: false
-        }
-        ListElement {
-            emply_id: "1220"
-            emply_dep: "Managment"
-            emply_role: "HR Executive"
-            emply_name: "Lara Smith"
-            check: true
-        }
-        ListElement {
-            emply_id: "1110"
-            emply_dep: "IT"
-            emply_role: "Sr. IT Support"
-            emply_name: "Billy Batsson"
-            check: false
-        }
+        source: "qrc:/employee_details.xml"
+        query: "/details/emply"
+
+        XmlRole { name: "emply_id"; query: "emply_id/string()" }
+        XmlRole { name: "emply_dep"; query: "emply_dep/string()" }
+        XmlRole { name: "emply_role"; query: "emply_role/string()" }
+        XmlRole { name: "emply_name"; query: "emply_name/string()" }
+        XmlRole { name: "check"; query: "check/string()" }
+
     }
 
 
@@ -70,30 +85,36 @@ Rectangle {
         TableViewColumn {
             role: "emply_id"
             title: "EMPLOYEE ID"
+            width: 120
         }
         TableViewColumn {
             role: "emply_dep"
             title: "EMPLOYEE DEPARTMENT"
+            width: 200
         }
         TableViewColumn {
             role: "emply_role"
             title: "EMPLOYEE ROLE"
+            width: 200
         }
         TableViewColumn {
             role: "emply_name"
             title: "EMPLOYEE NAME"
+            width: 200
         }
         TableViewColumn {
             role: "check"
             title: "STATUS"
             delegate: CheckBox {
-                checked: styleData.value
+                checked: (styleData.value == 1) ? true: false
+
             }
         }
         model: emplyModel
 
         itemDelegate: Item {
             id: item_
+            height: 30
             Text {
                 anchors.verticalCenter: parent.verticalCenter
                 //                  color: styleData.color
@@ -108,7 +129,6 @@ Rectangle {
             str_id = emplyModel.get(row).emply_id
             str_name = emplyModel.get(row).emply_name
         }
-
 
     }// TableView
 
@@ -127,7 +147,6 @@ Rectangle {
         color: "lightgrey"
         text: str_id !=""? "You have selected " + str_name + " ( " + str_id + " ) ." : ""
     }
-
 
 
     Image {

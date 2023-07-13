@@ -21,5 +21,6 @@
         <file>qmls/miscellaneousPage.qml</file>
         <file>qmls/imagesDetails.qml</file>
         <file>qmls/flipView.qml</file>
+        <file>qmls/webCam.qml</file>
     </qresource>
 </RCC>

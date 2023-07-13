@@ -22,5 +22,6 @@
         <file>images/keypad_7.png</file>
         <file>images/keypad_8.png</file>
         <file>images/keypad_9.png</file>
+        <file>employee_details.xml</file>
     </qresource>
 </RCC>

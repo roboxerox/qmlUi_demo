@@ -19,6 +19,7 @@ Item {
         font.pixelSize: 40
         color: "white"
         text: qsTr("WIDGET NETWORKING")
+        font.family: "Times New Roman"
     }
 
 
@@ -134,7 +135,7 @@ Item {
         id: misc_row
         height: 50
         width: parent.width / 3
-        spacing:5
+        spacing:10
         anchors {
             left: rec_list.right
             top: read_satus.bottom
@@ -157,6 +158,19 @@ Item {
                 isPressedHold = false
                 console.log("relrease, isPressedHold="+isPressedHold)
             }
+
+            background: Rectangle {
+                implicitHeight: 50
+                implicitWidth: 100
+                radius: 3
+                color: btn_count.down ? pressedColor : defaultColor
+                layer.enabled: true
+                layer.effect: DropShadow {
+                    transparentBorder: true
+                    color: btn_count.down ? pressedColor : defaultColor
+                    samples: 20
+                }
+            }
         }
 
         Text {
@@ -167,11 +181,25 @@ Item {
             text: slider.value
         }
 
+
         Button {
             id: btn_count2
             width: parent.width/4
             text:"count --"
             onClicked: decrease()
+
+            background: Rectangle {
+                implicitHeight: 50
+                implicitWidth: 100
+                radius: 3
+                color: btn_count2.down ? pressedColor : defaultColor
+                layer.enabled: true
+                layer.effect: DropShadow {
+                    transparentBorder: true
+                    color: btn_count2.down ? pressedColor : defaultColor
+                    samples: 20
+                }
+            }
         }
 
         Button {
@@ -184,10 +212,24 @@ Item {
                 console.log("Reader Mode : " + str_reader)
                 reader.m_isReadable = ! reader.m_isReadable
             }
+
+            background: Rectangle {
+                implicitHeight: 50
+                implicitWidth: 100
+                radius: 3
+                color: btn_count3.down ? pressedColor : defaultColor
+                layer.enabled: true
+                layer.effect: DropShadow {
+                    transparentBorder: true
+                    color: btn_count3.down ? pressedColor : defaultColor
+                    samples: 20
+                }
+            }
         }
     }
 
-
+    property color defaultColor: "#AFABF2"
+    property color pressedColor: Qt.darker(defaultColor,1.5)
 
 
     Slider {
@@ -243,36 +285,20 @@ Item {
         }
         width: 800;  height: 40
 
-        border.width: 0.05 * progress_bar_border.height
+        border.width: 0.05 * height
         radius: 0.5 * height
 
         Rectangle {
             visible: value > minimum
-            x: 0.1 * progress_bar_border.height;  y: 0.1 * progress_bar_border.height
+            x: 0.1 * parent.height;  y: 0.1 * parent.height
             width: Math.max(height,
-                            Math.min((value - minimum) / (maximum - minimum) * (parent.width - 0.2 * progress_bar_border.height),
-                                     parent.width - 0.2 * progress_bar_border.height)) // clip
-            height: 0.8 * progress_bar_border.height
+                            Math.min((value - minimum) / (maximum - minimum) * (parent.width - 0.2 * parent.height),
+                                     parent.width - 0.2 * parent.height)) // clip
+            height: 0.8 * parent.height
             color: 'blue'
             radius: parent.radius
         }
     }
-
-//    // FileDialog
-//    FileDialog {
-//            id: exportDialog
-
-
-//            title: "Please choose an XML TV file"
-//            nameFilters: [("*.xml")]
-
-//            onAccepted: {
-//                fileio.parse(importDialog.fileUrl)
-//            }
-//            onRejected: {
-//                console.log("Canceled")
-//            }
-//        } // end FileDialog
 
 
 //    Button {

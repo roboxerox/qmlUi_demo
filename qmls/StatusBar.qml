@@ -85,7 +85,7 @@ Rectangle {
 
     function set()
     {
-        status_datetime.text = Qt.formatDateTime(new Date(), "MMMM dd yyyy  hh:mm:ss")
+        status_datetime.text = Qt.formatDateTime(new Date(), "dddd MMMM dd yyyy  hh:mm:ss")
     }
 
     Text {

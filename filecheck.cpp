@@ -33,7 +33,7 @@ int FileCheck::sl_Size(QString file_url)
     if(file_url.contains("file://"))
         file_url.remove("file://");
 
-int size = 0;
+    int size = 0;
     QFile obj_file(file_url);
     if(obj_file.open(QIODevice::ReadOnly))
     {
