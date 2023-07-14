@@ -1,4 +1,6 @@
 import QtQuick 2.0
+import QtGraphicalEffects 1.0
+
 
 Item {
     id: pathView_widget
@@ -40,6 +42,16 @@ Item {
             page: "qrc:/qmls/webCam.qml"
             icon: "qrc:/images/keypad_7.png"
         }
+        ListElement {
+            name:"Login"
+            page: "qrc:/qmls/LoginWidget.qml"
+            icon: "qrc:/images/keypad_8.png"
+        }
+        ListElement {
+            name:"NA"
+            page: ""
+            icon: "qrc:/images/keypad_9.png"
+        }
     }
 
 
@@ -70,12 +82,19 @@ Item {
                     font.bold: wrapper.PathView.isCurrentItem ? "true" : "false"
                     smooth: true
                 }
-                MouseArea{
+                MouseArea {
                     anchors.fill: parent
                     onClicked: main_loader.source = page
                 }
             }
         }
+
+//        layer.enabled: true
+//        layer.effect: DropShadow {
+//            transparentBorder: true
+//            color: "red"
+//            samples: 35
+//        }
 
         PathView {
             id: view
@@ -91,7 +110,7 @@ Item {
 
             anchors.bottomMargin: 150
             anchors.topMargin: 100
-            anchors.leftMargin: 300
+            anchors.leftMargin: 280
 //            highlight: delegate
             preferredHighlightBegin: 0.5
             preferredHighlightEnd: 0.5
@@ -118,9 +137,9 @@ Item {
                 startX: 10
                 startY: 50
                 PathAttribute { name: "iconScale"; value: 0.5 }
-                PathQuad { x: 200; y: 150; controlX: 50; controlY: 200 }
+                PathQuad { x: 200; y: 150; controlX: 20; controlY: 120 }
                 PathAttribute { name: "iconScale"; value: 1.0 }
-                PathQuad { x: 390; y: 50; controlX: 350; controlY: 200 }
+                PathQuad { x: 390; y: 50; controlX: 380; controlY: 120 }
                 PathAttribute { name: "iconScale"; value: 0.5 }
             }
         }

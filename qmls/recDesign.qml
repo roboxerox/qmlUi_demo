@@ -1,6 +1,11 @@
 import QtQuick 2.0
-
 import QtGraphicalEffects 1.0
+
+
+/** This is example of
+  1. RectangularGlow
+  2. LinearGradient
+  */
 
 Rectangle
 {
@@ -120,6 +125,17 @@ Rectangle
             height: Math.round(parent.height / 2)
             radius: 25
 
+            LinearGradient {
+                anchors.fill: parent
+                source: rect3
+                start: Qt.point(0, 0)
+                end: Qt.point(rect3.height, rect3.width)
+                gradient: Gradient {
+                    GradientStop { position: 0.0; color: "white" }
+                    GradientStop { position: 1.0; color: "black" }
+                }
+            }
+
             MouseArea{
                 anchors.fill: parent
                 onClicked: console.log("rect3")
@@ -162,14 +178,18 @@ Rectangle
             height: Math.round(parent.height / 2)
             radius: 100
 
-            Text {
-                id: text4
-                anchors.centerIn: parent
-                text: qsTr("RED")
-                color: "#F80000"
+            LinearGradient {
+                anchors.fill: parent
+                source: rect4
+                start: Qt.point(0, 0)
+                end: Qt.point(rect4.height, rect4.width)
+                gradient: Gradient {
+                    GradientStop { position: 0.0; color: "orange" }
+                    GradientStop { position: 1.0; color: "#F80000" }
+                }
             }
 
-            MouseArea{
+            MouseArea {
                 anchors.fill: parent
                 onClicked: console.log("rect4")
             }
@@ -290,7 +310,7 @@ Rectangle
             anchors.fill: rect7
             glowRadius: 50
             spread: 0.4
-            color: "#00FF80"
+            color: "#0FEF80"
             cornerRadius: rect7.radius + glowRadius
         }
 
@@ -301,6 +321,17 @@ Rectangle
             width: Math.round(parent.width / 2)
             height: Math.round(parent.height / 2)
             radius: 100
+
+            LinearGradient {
+                anchors.fill: parent
+                source: rect7
+                start: Qt.point(0, 0)
+                end: Qt.point(rect7.height, rect7.width)
+                gradient: Gradient {
+                    GradientStop { position: 0.0; color: "yellow" }
+                    GradientStop { position: 1.0; color: "#0FEF80" }
+                }
+            }
 
             MouseArea{
                 anchors.fill: parent

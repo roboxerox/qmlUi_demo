@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
+import QtGraphicalEffects 1.0
 
 Item {
     id: grid_layout2
@@ -26,6 +27,10 @@ Item {
         ListElement {
             name:"Bar & Spline Chart"
             page: "qrc:/qmls/demoCharts2.qml"
+        }
+        ListElement {
+            name:"Login"
+            page: "qrc:/qmls/LoginWidget.qml"
         }
         ListElement {
             name:"Misc"
@@ -68,6 +73,13 @@ Item {
                     }
                 }
             }
+
+            layer.enabled: true
+            layer.effect: DropShadow {
+                transparentBorder: true
+                color: "blue"
+                samples: 50
+            }
         }
     }
 
@@ -89,7 +101,6 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-//                console.info("image clicked!")
                 stack_view.push("qrc:/qmls/flipView.qml")
 
             }
