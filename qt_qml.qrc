@@ -22,5 +22,9 @@
         <file>qmls/imagesDetails.qml</file>
         <file>qmls/flipView.qml</file>
         <file>qmls/webCam.qml</file>
+        <file>qmls/KeyboardInput.qml</file>
+        <file>qmls/KeyboardController.qml</file>
+        <file>qmls/Keyboard.qml</file>
+        <file>qmls/LoginWidget.qml</file>
     </qresource>
 </RCC>
