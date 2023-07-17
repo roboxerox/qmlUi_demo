@@ -14,8 +14,6 @@
         <file>qmls/GridLay2.qml</file>
         <file>qmls/GridLay1.qml</file>
         <file>qmls/gammaAdjustment.qml</file>
-        <file>qmls/demoCharts2.qml</file>
-        <file>qmls/demoCharts1.qml</file>
         <file>qmls/colorizePage.qml</file>
         <file>qmls/brightnessContrastPage.qml</file>
         <file>qmls/miscellaneousPage.qml</file>
@@ -25,6 +23,9 @@
         <file>qmls/KeyboardInput.qml</file>
         <file>qmls/KeyboardController.qml</file>
         <file>qmls/Keyboard.qml</file>
-        <file>qmls/LoginWidget.qml</file>
+        <file>qmls/loginWidget.qml</file>
+        <file>qmls/SwipeviewWidget.qml</file>
+        <file>qmls/chartScatters.qml</file>
+        <file>qmls/chartAreaSeries.qml</file>
     </qresource>
 </RCC>

@@ -1,0 +1,22 @@
+<UserDetails>
+	<User>
+		<user_id>admin</user_id>
+		<user_pass>admin123</user_pass>
+		<user_role>Administrator</user_role>
+	</User>
+	<User>
+		<user_id>optr1</user_id>
+		<user_pass>admin123</user_pass>
+		<user_role>Operator</user_role>
+	</User>
+	<User>
+		<user_id>optr2</user_id>
+		<user_pass>admin123</user_pass>
+		<user_role>Operator</user_role>
+	</User>
+	<User>
+		<user_id>spvr1</user_id>
+		<user_pass>admin123</user_pass>
+		<user_role>Supervisor</user_role>
+	</User>
+</UserDetails>

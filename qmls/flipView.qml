@@ -23,13 +23,13 @@ Item {
             icon: "qrc:/images/keypad_3.png"
         }
         ListElement {
-            name:"Pie & Line Chart"
-            page: "qrc:/qmls/demoCharts1.qml"
+            name:"AreaSeries Chart"
+            page: "qrc:/qmls/chartAreaSeries.qml"
             icon: "qrc:/images/keypad_4.png"
         }
         ListElement {
-            name:"Bar & Spline Chart"
-            page: "qrc:/qmls/demoCharts2.qml"
+            name:"Scatters Chart"
+            page: "qrc:/qmls/chartScatters.qml"
             icon: "qrc:/images/keypad_5.png"
         }
         ListElement {
@@ -44,12 +44,12 @@ Item {
         }
         ListElement {
             name:"Login"
-            page: "qrc:/qmls/LoginWidget.qml"
+            page: "qrc:/qmls/loginWidget.qml"
             icon: "qrc:/images/keypad_8.png"
         }
         ListElement {
-            name:"NA"
-            page: ""
+            name:"Swipe View"
+            page: "qrc:/qmls/SwipeviewWidget.qml"
             icon: "qrc:/images/keypad_9.png"
         }
     }

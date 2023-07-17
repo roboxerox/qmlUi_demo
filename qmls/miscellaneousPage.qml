@@ -56,7 +56,7 @@ Rectangle {
             NumberAnimation { to: 120; easing.type: Easing.OutQuad; duration: 1000 }
         }
 
-        source: (f_name != "null" && f_name != "")?f_name:"qrc:/images/qml-ui-demo-logo.png"
+        source: (f_name != "null" && f_name != "")? f_name:"qrc:/images/qml-ui-demo-logo.png"
     }
 
 
