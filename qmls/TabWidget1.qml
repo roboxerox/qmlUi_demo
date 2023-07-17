@@ -67,9 +67,9 @@ Rectangle {
            }
        }
 
-       Rectangle{
+       Rectangle {
            id: tab_three
-           color: "#A91A0C"
+           color: "#067788"
 
            Text {
                id: three_tab_text

@@ -250,7 +250,6 @@ Item {
         {
             console.log("slider " + value)
         }
-
     }
 
     // custom  ProgressBar

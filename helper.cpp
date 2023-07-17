@@ -20,8 +20,8 @@ void Helper::update_chart(QQuickItem *item)
                 QLinearGradient backgroundGradient;
                 backgroundGradient.setStart(QPointF(0, 0));
                 backgroundGradient.setFinalStop(QPointF(0, 1));
-                backgroundGradient.setColorAt(0.0, QRgb(0xd2d0d1));
-                backgroundGradient.setColorAt(1.0, QRgb(0x4c4547));
+                backgroundGradient.setColorAt(0.0, QRgb(0xd2d0d1)); // "#dcd0d1"
+                backgroundGradient.setColorAt(1.0, QRgb(0xa04547)); // "#a04547" // 4c4547
                 backgroundGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
                 chart->setBackgroundBrush(backgroundGradient);
                 // Customize plot area background

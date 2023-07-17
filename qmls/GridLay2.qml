@@ -21,16 +21,20 @@ Item {
             page: "qrc:/qmls/brightnessContrastPage.qml"
         }
         ListElement {
-            name:"Pie & Line Chart"
-            page: "qrc:/qmls/demoCharts1.qml"
+            name:"AreaSeries Chart"
+            page: "qrc:/qmls/chartAreaSeries.qml"
         }
         ListElement {
-            name:"Bar & Spline Chart"
-            page: "qrc:/qmls/demoCharts2.qml"
+            name:"Scatters Chart"
+            page: "qrc:/qmls/chartScatters.qml"
         }
         ListElement {
             name:"Login"
-            page: "qrc:/qmls/LoginWidget.qml"
+            page: "qrc:/qmls/loginWidget.qml"
+        }
+        ListElement {
+            name:"Swipe View"
+            page: "qrc:/qmls/SwipeviewWidget.qml"
         }
         ListElement {
             name:"Misc"
@@ -65,7 +69,6 @@ Item {
 
                 }
 
-
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
@@ -77,11 +80,14 @@ Item {
             layer.enabled: true
             layer.effect: DropShadow {
                 transparentBorder: true
-                color: "blue"
+                color: "yellowgreen"
                 samples: 50
             }
         }
     }
+
+    property color defaultColor: "#808080"
+    property color pressedColor: Qt.darker(defaultColor,1.5)
 
 
     Image {

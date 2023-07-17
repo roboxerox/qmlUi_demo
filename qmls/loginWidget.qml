@@ -3,11 +3,25 @@ import QtQuick.Controls 2.2
 import QtGraphicalEffects 1.0
 import QtQuick.Dialogs 1.2
 import QtQuick.Layouts 1.3
+import QtQuick.XmlListModel 2.0
+
 
 Rectangle {
     id: virtual_keyboard
     anchors.fill: parent
-    color: "lightgrey"
+    color: "transparent"
+
+
+    XmlListModel {
+        id: xmlModel
+        source: "qrc:/UserDetails.xml"
+        query: "/UserDetails/User"
+
+        XmlRole { name: "user_id"; query: "user_id/string()" }
+        XmlRole { name: "user_pass"; query: "user_pass/string()" }
+        XmlRole { name: "user_role"; query: "user_role/string()" }
+
+    }
 
     Rectangle {
         width: 300
@@ -22,6 +36,7 @@ Rectangle {
                 left: parent.left
                 right: parent.right
             }
+
 
             TabButton {
                 text: qsTr("Sign In")
@@ -131,6 +146,7 @@ Rectangle {
                             error_msg = "Successfully matched"
 
                         message_box.open()
+                        user_pass.text = ""
                     }
                 }
             }
@@ -248,10 +264,10 @@ Rectangle {
                     }
 
                     onClicked: {
-                        console.log("USER ID: ",user_fname.text," ROLE:",role_combobox.textAt(role_combobox.currentIndex))
+                        str_role = role_combobox.textAt(role_combobox.currentIndex)
+                        console.log("USER ID: ",user_fname.text," ROLE:",str_role)
                     }
                 }
-
             }
         }
 
@@ -261,7 +277,6 @@ Rectangle {
             color: "blue"
             samples: 35
         }
-
     }
 
     MessageDialog{
@@ -283,11 +298,14 @@ Rectangle {
 
 
     function check_login(){
-        if(user_name.text != "admin" || user_pass.text != "admin123")
-            error_type = 1
-        else
-            error_type = 0
+        error_type = 1
+        for(var index=0; index<xmlModel.rowCount();index++)
+        {
+            if(user_name.text == xmlModel.get(index).user_id && user_pass.text == xmlModel.get(index).user_pass)
+                error_type = 0
 
+//            console.log(xmlModel.get(index).user_id , xmlModel.get(index).user_pass)
+        }
         return error_type
     }
 
