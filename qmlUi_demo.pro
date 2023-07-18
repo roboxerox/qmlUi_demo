@@ -1,12 +1,13 @@
 TEMPLATE = app
 
-QT += qml quick core charts network
+QT += qml quick core charts network sql
 CONFIG += c++11
 
 SOURCES += main.cpp \
     helper.cpp \
     reader.cpp \
-    filecheck.cpp
+    filecheck.cpp \
+    mydatabase.cpp
 
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
@@ -34,7 +35,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     helper.h \
     reader.h \
-    filecheck.h
+    filecheck.h \
+    mydatabase.h
 
 RESOURCES += \
     icons.qrc \

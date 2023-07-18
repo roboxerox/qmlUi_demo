@@ -4,12 +4,12 @@ import QtGraphicalEffects 1.0
 import QtQuick.Dialogs 1.2
 import QtQuick.Layouts 1.3
 import QtQuick.XmlListModel 2.0
+import MyDatabase 1.0
 
 
-Rectangle {
+Item {
     id: virtual_keyboard
     anchors.fill: parent
-    color: "transparent"
 
 
     XmlListModel {
@@ -21,6 +21,10 @@ Rectangle {
         XmlRole { name: "user_pass"; query: "user_pass/string()" }
         XmlRole { name: "user_role"; query: "user_role/string()" }
 
+    }
+
+    MyDatabase{
+        id:obj_mydb
     }
 
     Rectangle {
@@ -266,6 +270,22 @@ Rectangle {
                     onClicked: {
                         str_role = role_combobox.textAt(role_combobox.currentIndex)
                         console.log("USER ID: ",user_fname.text," ROLE:",str_role)
+
+                        if(createDB())
+                        {
+                            obj_mydb.map = {"login_id": user_fname.text, "login_pass": user_fpass.text, "login_role":str_role}
+                            if(obj_mydb.m_InsertTable("login_auth"))
+                            {
+                                error_msg = "Successfully saved."
+                                error_type = 0
+                            }
+                            else
+                            {
+                                error_msg = "Unable to save details."
+                                error_type = 1
+                            }
+                            message_box.open()
+                        }
                     }
                 }
             }
@@ -307,6 +327,23 @@ Rectangle {
 //            console.log(xmlModel.get(index).user_id , xmlModel.get(index).user_pass)
         }
         return error_type
+    }
+
+
+    function createDB(){
+        var status = 0
+        obj_mydb.map = {"login_id": "varchar(10) NOT NULL", "login_pass": "varchar(20) NOT NULL", "login_role":"varchar(15) NOT NULL"}
+        if(obj_mydb.m_CreateTable("login_auth"))
+        {
+            console.log("CREATED.")
+            status = 1
+        }
+        else
+        {
+            console.log("NOT CREATED")
+            status = 0
+        }
+        return status
     }
 
 

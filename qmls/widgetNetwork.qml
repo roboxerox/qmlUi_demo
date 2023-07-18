@@ -22,9 +22,18 @@ Item {
         font.family: "Times New Roman"
     }
 
+//    Timer{
+//        id: reloadTimer
+//        interval: 1000
+//        repeat: true
+//        running: true
+//        triggeredOnStart: true
+//        onTriggered: xmlModel.reload()
+//    }
 
     XmlListModel {
         id: xmlModel
+//        source: "file:///home/anil/Documents/Qml_demo/qmlUi_demo/ip_links.xml"
         source: "qrc:/ip_links.xml"
         query: "/eth/interface"
 
@@ -74,7 +83,7 @@ Item {
             delegate: interfaceDelegate
             clip: true
             highlight: Rectangle {
-                color: "lightsteelblue"
+                color: "skyblue"
                 radius: 5
             }
             ScrollBar.vertical: ScrollBar {

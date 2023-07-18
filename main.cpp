@@ -4,6 +4,7 @@
 #include <helper.h>
 #include <reader.h>
 #include <filecheck.h>
+#include <mydatabase.h>
 
 
 int main(int argc, char *argv[])
@@ -32,6 +33,8 @@ int main(int argc, char *argv[])
 
     // export cpp classes method 2
     qmlRegisterType< FileCheck > ("File_Check",1,0, "FileCheck");
+    qmlRegisterType< MyDatabase > ("MyDatabase", 1,0, "MyDatabase");
+
 
     const QUrl url(QStringLiteral("qrc:/qmls/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

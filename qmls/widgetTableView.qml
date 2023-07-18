@@ -4,10 +4,9 @@ import QtQuick.Controls 1.4
 import QtQuick.XmlListModel 2.0
 
 
-Rectangle {
+Item {
     id: table_view_page
     anchors.fill: parent
-    color: "transparent"
 
 //    ListModel {
 //        id: emplyModel

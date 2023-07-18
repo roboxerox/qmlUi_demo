@@ -11,7 +11,7 @@
 	</interface>
 	<interface>
 		<ifname>enp2s0</ifname>
-		<ip_addr>100.10.0.14</ip_addr>
+		<ip_addr>100.10.0.16</ip_addr>
 		<mac_addr>54:e8:ad:15:b2:3c</mac_addr>
 	</interface>
 	<interface>

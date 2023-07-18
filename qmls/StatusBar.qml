@@ -105,12 +105,12 @@ Rectangle {
 
 
     Timer {
-           id: dtTimer
-           interval: 1000
-           repeat: true
-           running: true
-           triggeredOnStart: true
-           onTriggered: set()
+        id: dtTimer
+        interval: 1000
+        repeat: true
+        running: true
+        triggeredOnStart: true
+        onTriggered: set()
        }
 
 }

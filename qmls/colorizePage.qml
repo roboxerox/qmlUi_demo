@@ -3,10 +3,9 @@ import QtGraphicalEffects 1.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.2
 
-Rectangle {
+Item {
     id: colorize_page
     anchors.fill: parent
-    color: "grey"
 
 
     Item {

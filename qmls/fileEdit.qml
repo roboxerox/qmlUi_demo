@@ -7,10 +7,10 @@ import QtQuick.XmlListModel 2.0
 
 import File_Check 1.0
 
-Rectangle {
+Item {
     id: file_edit_page
     anchors.fill: parent
-    color: "transparent"
+    anchors.leftMargin: 40
 
     RowLayout{
         id: btn_row

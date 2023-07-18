@@ -1,11 +1,10 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.2
 
-Rectangle {
+Item {
 
     id: ec_arch
     anchors.fill: parent
-    color: "transparent"
 
     Image {
         id: mvb_img
