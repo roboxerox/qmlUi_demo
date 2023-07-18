@@ -44,6 +44,7 @@ Rectangle {
         id: player
 //        source: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
         source: "qrc:/images/light.mp4"
+//        source: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
 //        autoPlay: true
     }
 

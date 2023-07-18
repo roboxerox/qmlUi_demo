@@ -23,33 +23,33 @@ Item {
             icon: "qrc:/images/keypad_3.png"
         }
         ListElement {
-            name:"AreaSeries Chart"
-            page: "qrc:/qmls/chartAreaSeries.qml"
+            name:"SQL"
+            page: "qrc:/qmls/sqlExample.qml"
             icon: "qrc:/images/keypad_4.png"
-        }
-        ListElement {
-            name:"Scatters Chart"
-            page: "qrc:/qmls/chartScatters.qml"
-            icon: "qrc:/images/keypad_5.png"
-        }
-        ListElement {
-            name:"Misc"
-            page: "qrc:/qmls/miscellaneousPage.qml"
-            icon: "qrc:/images/keypad_6.png"
-        }
-        ListElement {
-            name:"WebCam"
-            page: "qrc:/qmls/webCam.qml"
-            icon: "qrc:/images/keypad_7.png"
         }
         ListElement {
             name:"Login"
             page: "qrc:/qmls/loginWidget.qml"
-            icon: "qrc:/images/keypad_8.png"
+            icon: "qrc:/images/keypad_5.png"
         }
         ListElement {
             name:"Swipe View"
             page: "qrc:/qmls/SwipeviewWidget.qml"
+            icon: "qrc:/images/keypad_6.png"
+        }
+        ListElement {
+            name:"Misc"
+            page: "qrc:/qmls/miscellaneousPage.qml"
+            icon: "qrc:/images/keypad_7.png"
+        }
+        ListElement {
+            name:"WebCam"
+            page: "qrc:/qmls/webCam.qml"
+            icon: "qrc:/images/keypad_8.png"
+        }
+        ListElement {
+            name:"NA"
+            page: "qrc:/qmls/NA.qml"
             icon: "qrc:/images/keypad_9.png"
         }
     }
@@ -75,7 +75,10 @@ Item {
                 }
                 Text {
                     id: nameText
-                    anchors { top: icon_button.bottom; horizontalCenter: parent.horizontalCenter }
+                    anchors {
+                        top: icon_button.bottom
+                        horizontalCenter: parent.horizontalCenter
+                    }
                     text: name
                     font.pointSize: 12
                     color: wrapper.PathView.isCurrentItem ? "lightgreen" : "black"

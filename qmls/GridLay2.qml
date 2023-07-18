@@ -21,12 +21,8 @@ Item {
             page: "qrc:/qmls/brightnessContrastPage.qml"
         }
         ListElement {
-            name:"AreaSeries Chart"
-            page: "qrc:/qmls/chartAreaSeries.qml"
-        }
-        ListElement {
-            name:"Scatters Chart"
-            page: "qrc:/qmls/chartScatters.qml"
+            name:"SQL"
+            page: "qrc:/qmls/sqlExample.qml"
         }
         ListElement {
             name:"Login"
@@ -39,6 +35,10 @@ Item {
         ListElement {
             name:"Misc"
             page: "qrc:/qmls/miscellaneousPage.qml"
+        }
+        ListElement {
+            name:"NA"
+            page: "qrc:/qmls/NA.qml"
         }
 
     }
@@ -80,7 +80,7 @@ Item {
             layer.enabled: true
             layer.effect: DropShadow {
                 transparentBorder: true
-                color: "yellowgreen"
+                color: "blue"
                 samples: 50
             }
         }

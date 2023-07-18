@@ -4,11 +4,10 @@ import QtQuick.Controls 2.2
 import QtQuick.Controls.Styles 1.4
 import QtGraphicalEffects 1.0
 
-Rectangle{
+Item {
     id:brightness_contrast_adjustment
     anchors.fill: parent
 
-    color: "grey"
 
     Item {
         id: org_image_b

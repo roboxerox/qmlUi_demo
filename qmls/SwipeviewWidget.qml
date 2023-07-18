@@ -168,6 +168,159 @@ Item {
                 }
             }
         }
+
+        Item{
+            id: fifthPage
+            Text {
+                id: textName_5
+                anchors{
+                    top:parent.top
+                    horizontalCenter: parent.horizontalCenter
+                }
+                text: qsTr("AreaSeries Chart")
+                font.family: "Tibetan Machine Uni"
+                font.pixelSize: 45
+                color: "white"
+            }
+
+            ChartView {
+                id: chartView1
+                title: "NHL All-Star Team Players"
+                anchors{
+                    left: parent.left
+                    top: textName_5.bottom
+                    leftMargin: 20
+                }
+                theme: ChartView.ChartThemeBrownSand
+                width: 920
+                height: 380
+                antialiasing: true
+
+                // Define x-axis to be used with the series instead of default one
+                ValueAxis {
+                    id: valueAxis
+                    min: 2010
+                    max: 2021
+                    tickCount: 12
+                    labelFormat: "%.0f"
+                }
+
+                AreaSeries {
+                    name: "Russian"
+                    color: "#FFA52C1E"
+                    borderColor: "#FF0039A5"
+                    borderWidth: 3
+                    axisX: valueAxis
+                    upperSeries: LineSeries {
+                        XYPoint { x: 2010; y: 1 }
+                        XYPoint { x: 2011; y: 2 }
+                        XYPoint { x: 2012; y: 1 }
+                        XYPoint { x: 2013; y: 1 }
+                        XYPoint { x: 2014; y: 1 }
+                        XYPoint { x: 2015; y: 0 }
+                        XYPoint { x: 2016; y: 1 }
+                        XYPoint { x: 2017; y: 1 }
+                        XYPoint { x: 2018; y: 4 }
+                        XYPoint { x: 2019; y: 3 }
+                        XYPoint { x: 2020; y: 2 }
+                        XYPoint { x: 2021; y: 1 }
+                    }
+                }
+
+                AreaSeries {
+                    name: "India"
+                    color: "#FFA51E"
+                    borderColor: "green"
+                    borderWidth: 3
+                    axisX: valueAxis
+                    upperSeries: LineSeries {
+                        XYPoint { x: 2010; y: 0 }
+                        XYPoint { x: 2011; y: 0 }
+                        XYPoint { x: 2012; y: 1 }
+                        XYPoint { x: 2013; y: 1 }
+                        XYPoint { x: 2014; y: 3 }
+                        XYPoint { x: 2015; y: 1 }
+                        XYPoint { x: 2016; y: 2 }
+                        XYPoint { x: 2017; y: 1 }
+                        XYPoint { x: 2018; y: 3 }
+                        XYPoint { x: 2019; y: 3 }
+                        XYPoint { x: 2020; y: 1 }
+                        XYPoint { x: 2021; y: 3 }
+                    }
+                }
+            }
+        }
+
+        Item {
+            id: sixthPage
+            Text {
+                id: textName_6
+                anchors{
+                    top:parent.top
+                    horizontalCenter: parent.horizontalCenter
+                }
+                text: qsTr("Scatter Chart")
+                font.family: "Tibetan Machine Uni"
+                font.pixelSize: 45
+                color: "white"
+            }
+
+            ChartView {
+                id: chartView2
+                title: "Scatters"
+                anchors{
+                    left: parent.left
+                    top: textName_6.bottom
+                    leftMargin: 20
+                }
+                theme: ChartView.ChartThemeBlueCerulean
+                width: 920
+                height: 380
+                antialiasing: true
+
+                ScatterSeries {
+                    id: scatter1
+                    name: "Scatter1"
+                    XYPoint { x: 1.5; y: 1.5 }
+                    XYPoint { x: 1.5; y: 1.6 }
+                    XYPoint { x: 1.57; y: 1.55 }
+                    XYPoint { x: 1.8; y: 1.8 }
+                    XYPoint { x: 1.9; y: 1.6 }
+                    XYPoint { x: 2.1; y: 1.3 }
+                    XYPoint { x: 2.5; y: 2.1 }
+                }
+
+                ScatterSeries {
+                    name: "Scatter2"
+                    XYPoint { x: 1.2; y: 2.1 }
+                    XYPoint { x: 2.0; y: 2.0 }
+                    XYPoint { x: 2.0; y: 2.1 }
+                    XYPoint { x: 2.07; y: 2.05 }
+                    XYPoint { x: 2.2; y: 2.9 }
+                    XYPoint { x: 2.4; y: 2.7 }
+                    XYPoint { x: 2.67; y: 2.65 }
+                }
+
+        //        PinchArea{
+        //            id: pa
+        //            anchors.fill: parent
+        //            onPinchUpdated: {
+        //                chartView.zoomReset();
+        //                var center_x = pinch.center.x
+        //                var center_y = pinch.center.y
+        //                var width_zoom = height/pinch.scale;
+        //                var height_zoom = width/pinch.scale;
+        //                var r = Qt.rect(center_x-width_zoom/2, center_y - height_zoom/2, width_zoom, height_zoom)
+        //                chartView.zoomIn(r)
+        //            }
+
+        //        }
+
+            }
+
+        }
+
+
     }
 
     PageIndicator {
