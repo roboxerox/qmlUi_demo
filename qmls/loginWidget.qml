@@ -8,7 +8,7 @@ import MyDatabase 1.0
 
 
 Item {
-    id: virtual_keyboard
+    id: login_widget
     anchors.fill: parent
 
 

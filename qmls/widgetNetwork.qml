@@ -69,6 +69,7 @@ Item {
             left: parent.left
             margins: 40
         }
+        radius: 5
         width: 200
         height: 250
         color: "white"
@@ -76,7 +77,7 @@ Item {
         ListView{
             id:list
             anchors.fill: parent
-            anchors.margins: 1
+            anchors.margins: 5
             width: parent.width
             height: parent.height
             model: xmlModel
@@ -107,7 +108,7 @@ Item {
         }
 
         font.pixelSize: 20
-        color: "white"
+        color: "#FFFFFF"/*"white"*/
         text: qsTr(str_selected)
     }
 
@@ -139,7 +140,7 @@ Item {
             slider.value -= 1
     }
 
-    RowLayout{
+    RowLayout {
 
         id: misc_row
         height: 50

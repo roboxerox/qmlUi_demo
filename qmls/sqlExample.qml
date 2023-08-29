@@ -7,7 +7,7 @@ import QtQuick.Dialogs 1.2
 
 Item {
 
-    id: na_1
+    id: sql_1
     anchors.fill: parent
 
     MyDatabase {
@@ -39,7 +39,7 @@ Item {
             anchors {
                 top: parent.top
                 left: eId.right
-                margins: 50
+                margins: 46
             }
             border.color: "blue"
             radius: 5
@@ -73,7 +73,7 @@ Item {
             anchors {
                 top: eId.bottom
                 left: eName.right
-                margins: 50
+                margins: 46
             }
             border.color: "grey"
             radius: 5
@@ -99,7 +99,6 @@ Item {
             height: 50
             text: "Insert Data"
             onClicked: {
-
                 if(createDB())
                 {
                     obj_mydb.map = {"emply_id": iTxt.text, "emply_name": nameTxt.text}

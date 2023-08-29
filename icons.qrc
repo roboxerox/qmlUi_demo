@@ -24,5 +24,13 @@
         <file>images/keypad_9.png</file>
         <file>employee_details.xml</file>
         <file>UserDetails.xml</file>
+        <file>images/neural.png</file>
+        <file>images/picture.png</file>
+        <file>images/pages.png</file>
+        <file>images/table.png</file>
+        <file>images/video-player.png</file>
+        <file>images/sketch.png</file>
+        <file>images/image.png</file>
+        <file>images/tabs.png</file>
     </qresource>
 </RCC>

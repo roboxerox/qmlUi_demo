@@ -31,9 +31,6 @@ void MyDatabase::setMap(QVariantMap map)
     qDebug ()<< mMap;
 }
 
-
-
-//bool MyDatabase::m_CreateTable( QString TableName, QMap<QString, QString> attributes)
 bool MyDatabase::m_CreateTable( QString TableName)
 {
     strSqliteError.clear();
