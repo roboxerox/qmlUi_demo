@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-QT += qml quick core charts network sql
+QT += qml quick core charts network sql scxml
 CONFIG += c++11
 
 SOURCES += main.cpp \

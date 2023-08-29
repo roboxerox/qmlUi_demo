@@ -13,42 +13,42 @@ Item {
         ListElement {
             name:"Networking"
             page: "qrc:/qmls/widgetNetwork.qml"
-            img:"qrc:/images/icon1.png"
+            img:"qrc:/images/neural.png"
         }
         ListElement {
             name:"image layout"
             page: "qrc:/qmls/imagesDetails.qml"
-            img:"qrc:/images/ec.png"
+            img:"qrc:/images/picture.png"
         }
         ListElement {
             name:"File Edit"
             page: "qrc:/qmls/fileEdit.qml"
-            img:""
+            img:"qrc:/images/pages.png"
         }
         ListElement {
             name:"Tab Widget"
             page: "qrc:/qmls/TabWidget1.qml"
-            img:""
+            img:"qrc:/images/tabs.png"
         }
         ListElement {
             name:"Table Widget"
             page: "qrc:/qmls/widgetTableView.qml"
-            img:""
+            img:"qrc:/images/table.png"
         }
         ListElement {
             name:"Video Player";
            page: "qrc:/qmls/widgetVideoPlayer.qml"
-           img:""
+           img:"qrc:/images/video-player.png"
         }
         ListElement {
             name:"Rect Design"
             page: "qrc:/qmls/recDesign.qml"
-            img:""
+            img:"qrc:/images/sketch.png"
         }
         ListElement {
             name:"Gamma Adjustment"
             page: "qrc:/qmls/gammaAdjustment.qml"
-            img:""
+            img:"qrc:/images/image.png"
         }
     }
 
