@@ -321,8 +321,11 @@ Item {
         error_type = 1
         for(var index=0; index<xmlModel.rowCount();index++)
         {
-            if(user_name.text == xmlModel.get(index).user_id && user_pass.text == xmlModel.get(index).user_pass)
+            if(user_name.text === xmlModel.get(index).user_id && user_pass.text === xmlModel.get(index).user_pass)
+            {
                 error_type = 0
+                break
+            }
 
 //            console.log(xmlModel.get(index).user_id , xmlModel.get(index).user_pass)
         }

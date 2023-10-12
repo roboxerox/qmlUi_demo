@@ -30,11 +30,20 @@ This demo is using qt-qml which has include examples of :
 ## Dependencies install
 
 		sudo apt update
-		sudo apt install build-essential qt5-default qtdeclarative5-dev
-		sudo apt install qml-module-qtquick-dialog libqt5charts5-dev 
+		sudo apt install build-essential qt5-default qtdeclarative5-dev libqt5charts5-dev
+		sudo apt install qml-module-qtquick-dialog  qml-module-qt-labs-settings qml-module-qt-labs-folderlistmodel qml-module-qtcharts qml-module-qtquick-xmllistmodel 
 		
+
 		
-## Build
+## cmake Build
+
+		git clone https://github.com/roboxerox/qmlUi_demo.git
+		cd qmlUi_demo
+		mkdir cbuild && cd cbuild
+		cmake ..
+		make
+
+## qmake Build
 
 		git clone https://github.com/roboxerox/qmlUi_demo.git
 		cd qmlUi_demo
@@ -43,5 +52,5 @@ This demo is using qt-qml which has include examples of :
 		make
 		
 ## Run
-
+		cd <PATH_TO_BUILD>
 		./qmlUi_demo

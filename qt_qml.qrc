@@ -27,5 +27,6 @@
         <file>qmls/SwipeviewWidget.qml</file>
         <file>qmls/NA.qml</file>
         <file>qmls/sqlExample.qml</file>
+        <file>qmls/BottomBar.qml</file>
     </qresource>
 </RCC>
