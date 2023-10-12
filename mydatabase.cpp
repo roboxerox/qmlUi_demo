@@ -6,6 +6,8 @@ MyDatabase::MyDatabase()
 
 bool MyDatabase::m_OpenDB()
 {
+    if(icounter >= 4294967295)
+        icounter = 0;
     QString strCounter = QString::number(icounter++);
     dba = QSqlDatabase::addDatabase("QSQLITE" , "CONN"+QString::number(QDateTime::currentMSecsSinceEpoch())+strCounter);
     dba.setDatabaseName(QDir::currentPath()+QDir::separator()+"employee_info.db");

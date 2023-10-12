@@ -32,5 +32,8 @@
         <file>images/sketch.png</file>
         <file>images/image.png</file>
         <file>images/tabs.png</file>
+        <file>images/list.png</file>
+        <file>images/home.png</file>
+        <file>images/return.png</file>
     </qresource>
 </RCC>

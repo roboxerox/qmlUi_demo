@@ -31,4 +31,8 @@ Window {
 
         source: "qrc:/qmls/StackViewPage.qml"
     }
+
+    BottomBar{
+        id: bottombar
+    }
 }
