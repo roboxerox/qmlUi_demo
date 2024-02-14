@@ -67,7 +67,7 @@ Item {
 
             ChartView {
                 id: line_chart
-                title: "Line"
+                title: "Shares"
                 anchors{
                     left: parent.left
                     top: textName_2.bottom
@@ -78,15 +78,52 @@ Item {
                 height: 380
                 antialiasing: true
 
+                ValueAxis {
+                    id: valueAxis_year
+                    min: 2000
+                    max: 2024
+                    minorTickCount: 1
+                    tickCount: 12
+                    labelFormat: "%.0f"
+                }
+
+                ValueAxis {
+                    id: valueAxis_Price
+                    min: 5
+                    max: 600
+                    minorTickCount: 1
+                    tickCount: 9
+                    labelFormat: "%.0f"
+                }
+
                 LineSeries {
-                    name: "LineSeries"
-                    XYPoint { x: 0; y: 0 }
-                    XYPoint { x: 1.1; y: 2.1 }
-                    XYPoint { x: 1.9; y: 3.3 }
-                    XYPoint { x: 2.1; y: 2.1 }
-                    XYPoint { x: 2.9; y: 4.9 }
-                    XYPoint { x: 3.4; y: 3.0 }
-                    XYPoint { x: 4.1; y: 3.3 }
+                    name: "XYZ Techno"
+                    color: "lightgreen"
+                    axisX: valueAxis_year
+                    axisY: valueAxis_Price
+                    width: 2
+                    XYPoint { x: 2000; y: 5 }
+                    XYPoint { x: 2005; y: 10 }
+                    XYPoint { x: 2010; y: 150 }
+                    XYPoint { x: 2015; y: 140 }
+                    XYPoint { x: 2020; y: 210 }
+                    XYPoint { x: 2021; y: 180 }
+                    XYPoint { x: 2023; y: 320 }
+                }
+
+                LineSeries {
+                    name: "ABC Finance"
+                    color: "skyblue"
+                    axisX: valueAxis_year
+                    axisY: valueAxis_Price
+                    width: 2
+                    XYPoint { x: 2000; y: 15 }
+                    XYPoint { x: 2005; y: 100 }
+                    XYPoint { x: 2010; y: 210 }
+                    XYPoint { x: 2015; y: 360 }
+                    XYPoint { x: 2020; y: 200 }
+                    XYPoint { x: 2021; y: 190 }
+                    XYPoint { x: 2023; y: 560 }
                 }
             }
         }
@@ -206,7 +243,7 @@ Item {
                 }
 
                 AreaSeries {
-                    name: "Russian"
+                    name: "Australian"
                     color: "#FFA52C1E"
                     borderColor: "#FF0039A5"
                     borderWidth: 3
@@ -267,7 +304,7 @@ Item {
 
             ChartView {
                 id: chartView2
-                title: "Scatters"
+                title: "RADAR Map"
                 anchors{
                     left: parent.left
                     top: textName_6.bottom
@@ -278,27 +315,66 @@ Item {
                 height: 380
                 antialiasing: true
 
+                ValueAxis {
+                    id: valueAxis_height
+                    min: 0.0
+                    max: 3.0
+                    minorTickCount: 4
+                    tickCount: 4
+                    labelFormat: "%.0f"
+                }
+                ValueAxis {
+                    id: valueAxis_diameter
+                    min: 0.0
+                    max: 3.0
+                    minorTickCount: 1
+                    tickCount: 4
+                    labelFormat: "%.0f"
+                }
+
                 ScatterSeries {
                     id: scatter1
-                    name: "Scatter1"
-                    XYPoint { x: 1.5; y: 1.5 }
-                    XYPoint { x: 1.5; y: 1.6 }
+                    name: "Radar-SW56"
+                    color: "red"
+                    axisX: valueAxis_height
+                    axisY: valueAxis_diameter
+                    XYPoint { x: 0.5; y: 1.0 }
+                    XYPoint { x: 1.5; y: 1.9 }
                     XYPoint { x: 1.57; y: 1.55 }
                     XYPoint { x: 1.8; y: 1.8 }
                     XYPoint { x: 1.9; y: 1.6 }
                     XYPoint { x: 2.1; y: 1.3 }
-                    XYPoint { x: 2.5; y: 2.1 }
+                    XYPoint { x: 2.5; y: 2.4 }
                 }
 
                 ScatterSeries {
-                    name: "Scatter2"
-                    XYPoint { x: 1.2; y: 2.1 }
+                    id: scatter2
+                    name: "Radar-NE08"
+                    color: "blue"
+                    axisX: valueAxis_height
+                    axisY: valueAxis_diameter
+                    XYPoint { x: 1.2; y: 1.9 }
                     XYPoint { x: 2.0; y: 2.0 }
-                    XYPoint { x: 2.0; y: 2.1 }
+                    XYPoint { x: 1.0; y: 2.0 }
                     XYPoint { x: 2.07; y: 2.05 }
-                    XYPoint { x: 2.2; y: 2.9 }
-                    XYPoint { x: 2.4; y: 2.7 }
-                    XYPoint { x: 2.67; y: 2.65 }
+                    XYPoint { x: 2.2; y: 2.0 }
+                    XYPoint { x: 1.9; y: 1.9 }
+                    XYPoint { x: 2.05; y: 2.15 }
+                }
+
+                ScatterSeries {
+                    id: scatter3
+                    name: "Radar-W004"
+                    color: "green"
+                    axisX: valueAxis_height
+                    axisY: valueAxis_diameter
+                    XYPoint { x: 0.8; y: 1.4 }
+                    XYPoint { x: 1.0; y: 1.08 }
+                    XYPoint { x: 1.8; y: 1.02 }
+                    XYPoint { x: 1.07; y: 1.5 }
+                    XYPoint { x: 2.01; y: 1.1 }
+                    XYPoint { x: 1.5; y: 2.2 }
+                    XYPoint { x: 2.3; y: 1.92 }
                 }
 
         //        PinchArea{
@@ -313,14 +389,10 @@ Item {
         //                var r = Qt.rect(center_x-width_zoom/2, center_y - height_zoom/2, width_zoom, height_zoom)
         //                chartView.zoomIn(r)
         //            }
-
         //        }
 
             }
-
         }
-
-
     }
 
     PageIndicator {
