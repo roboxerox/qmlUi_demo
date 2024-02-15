@@ -72,8 +72,11 @@ Rectangle {
         title: "About Us"
         text: "
                Qt/QML UI
-               Version : 0.6
-               Description: This is a demo example of qt/qml UI "
+               Version : 1.0
+               Description: This is a demo example of qt/qml UI
+
+               Copyright 2020-2025 The XYZ Ltd.
+               All rights reserved."
         icon: StandardIcon.Information
         standardButtons: StandardButton.Ok
         onAccepted: {
