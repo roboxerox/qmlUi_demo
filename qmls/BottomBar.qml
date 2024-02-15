@@ -34,12 +34,13 @@ Rectangle {
             antialiasing: true
             source: "qrc:/images/list.png"
 
-//            MouseArea {
-//                anchors.fill: parent
-//                onClicked: {
-//                    main_loader.source = "qrc:/qmls/StackViewPage.qml"
-//                }
-//            }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    //main_loader.source = "qrc:/qmls/StackViewPage.qml"
+                    console.log("LIST clicked")
+                }
+            }
         }
 
 //        Image {
@@ -99,9 +100,6 @@ Rectangle {
                     console.log("return")
                 }
             }
-
         }
-
     }
-
 }
