@@ -7,6 +7,8 @@ import QtQuick.Layouts 1.3
 
 Item {
 
+    id: widNet
+
     anchors.fill: parent
 
     Text {
@@ -238,6 +240,7 @@ Item {
         }
     }
 
+
     property color defaultColor: "#AFABF2"
     property color pressedColor: Qt.darker(defaultColor,1.5)
 
@@ -306,6 +309,31 @@ Item {
             height: 0.8 * parent.height
             color: 'blue'
             radius: parent.radius
+        }
+    }
+
+
+
+    CircularProgressBar {
+        id: c_progress_1
+        anchors{
+            top:parent.top
+            right: parent.right
+            rightMargin: 10
+            topMargin: 10
+        }
+
+        lineWidth: 20
+        value: (widNet.value/100)*2
+        size: 150
+        secondaryColor: "#e0e0e0"
+        primaryColor: "#9ccd65"
+
+        Text {
+            text: parseInt(c_progress_1.value * 100) + "%"
+            anchors.centerIn: parent
+            font.pointSize: 20
+            color: c_progress_1.primaryColor
         }
     }
 

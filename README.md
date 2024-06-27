@@ -22,7 +22,7 @@ This demo is using qt-qml which has include examples of :
 * XML Read and create list view using [XmlListModel](https://doc.qt.io/qt-6/qml-qtqml-xmllistmodel-xmllistmodel.html)
 * Read and Write in text file using [XMLHttpRequest](https://doc.qt.io/qt-6/qml-qtqml-xmlhttprequest.html)
 * Virtual Keyboard with sign in & sign up function
-* Progress Bar & [Slider](https://doc.qt.io/qt-6/qml-qtquick-controls-slider.html)
+* Progress Bar(Horizontal and Circular) & [Slider](https://doc.qt.io/qt-6/qml-qtquick-controls-slider.html)
 * function and cpp class access in qml sheets
 * Swipe view using [SwipeView](https://doc.qt.io/qt-6/qml-qtquick-controls-swipeview.html)
 * Flip View using [PathView](https://doc.qt.io/qt-6/qml-qtquick-pathview.html)

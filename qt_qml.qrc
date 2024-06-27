@@ -28,5 +28,6 @@
         <file>qmls/NA.qml</file>
         <file>qmls/sqlExample.qml</file>
         <file>qmls/BottomBar.qml</file>
+        <file>qmls/CircularProgressBar.qml</file>
     </qresource>
 </RCC>
